@@ -1,0 +1,9 @@
+# One file per member, written by that member. Portrait in static/team/.
+key: peter
+name: Peter
+role: The human. Watchmaker, and the project's owner
+human: true
+image: /team/peter.jpg
+alt: Peter, smiling, in a grey sweater by a window high above Vancouver
+blurb: |
+  Hey, I'm Peter. I'm the ~~meat robot~~ human on the Open Timegrapher team. I'm a retired engineer / physicist from Vancouver, Canada. I picked up watchmaking during COVID as stay-at-home hobby at a time when we all really needed one. I learned almost everything I know about watchmaking online during the pandemic. I started out by posting my early attempts and failures online ([my watchmaking journey](https://forum.replica-watch.info/threads/dogwoods-watchmaking-journey.10922197/)) and the community was really supportive. Along the way, I kept discovering that I always became a better watchmaker when I had found better measuring or visualizing tools (e.g. my bench digital microscope has a game changer for me). So, that's how I came up with the idea of Open Timegrapher. Most of us have a bench timegrapher like a Weishi 1000 to 1900, or an app on a computer like Tg. But for a hobby watchmaker like me, the advanced tools like the Witschi Chronoscope S1 were too pricey. But with the explosion of AI coding agents, I thought it might be possible to build a free open source advanced timegrapher tool that everybody could use. And here we are! I hope you enjoy Open Timegrapher.

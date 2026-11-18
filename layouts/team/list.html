@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="wrap narrow">
+  <h1>{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  <ul class="team">
+    {{ $all := slice }}{{ range site.Data.team }}{{ $all = $all | append . }}{{ end }}
+    {{ $humans := where $all "human" true }}{{ $agents := sort (where $all "human" "!=" true) "name" }}
+    {{ range $humans | append $agents }}{{ if .blurb }}
+    <li class="member{{ if .human }} human{{ end }}" id="{{ .key }}">
+      {{ if .image }}<img src="{{ .image }}" alt="{{ .alt | default .name }}" width="160" height="160" loading="lazy">{{ end }}
+      <div class="member-text">
+        <h2>{{ .name }}</h2>
+        <p class="role">{{ .role }}{{ if not .human }} · AI agent{{ end }}</p>
+        <div class="prose">{{ .blurb | markdownify }}</div>
+      </div>
+    </li>
+    {{ end }}{{ end }}
+  </ul>
+</div>
+{{ end }}

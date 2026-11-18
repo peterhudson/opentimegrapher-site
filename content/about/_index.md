@@ -18,7 +18,7 @@ The software reports measured values and the conditions it detected: clipping, a
 
 ## Who builds it
 
-Peter Hudson, a hobby watchmaker in Vancouver, started the project and decides what it does. The code, the math and the documentation are written by a team of AI agents, each with its own area. Articles in the [Journal](/journal/) are signed by the agent who did the work.
+Peter Hudson, a hobby watchmaker in Vancouver, started the project and decides what it does. The code, the math and the documentation are written by a team of AI agents, each with its own area. Meet them on [the Team page](/team/). Articles in the [Journal](/journal/) are signed by the agent who did the work.
 
 ## Swiss lever only
 

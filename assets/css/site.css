@@ -97,3 +97,10 @@ nav[aria-label="Main"] a.nav-cta{color:var(--fg);font-weight:600}
   .site-header{position:static}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+.team{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:40px}
+.member{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;align-items:start}
+.member img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:1px solid var(--line);background:var(--surface)}
+.member h2{margin:0;font-size:24px}
+.member .role{margin:2px 0 10px;color:var(--muted);font-size:15px}
+.member .prose p{margin:0 0 .8em}
+@media (max-width:600px){.member{grid-template-columns:1fr}.member img{width:120px;height:120px}}
