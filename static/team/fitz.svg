@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>Fitz</title>
+  <rect width="320" height="320" fill="#1f2a33"/>
+  <!-- open movement -->
+  <circle cx="160" cy="205" r="98" fill="#3b4752" stroke="#9aa7b2" stroke-width="6"/>
+  <circle cx="160" cy="205" r="86" fill="none" stroke="#56636e" stroke-width="2" stroke-dasharray="3 5"/>
+  <!-- bridge -->
+  <path d="M80 250 Q160 160 240 250" fill="none" stroke="#b9c3cb" stroke-width="14" stroke-linecap="round"/>
+  <!-- balance wheel -->
+  <g transform="translate(160 228)">
+    <circle r="34" fill="none" stroke="#d4a537" stroke-width="7"/>
+    <line x1="-34" y1="0" x2="34" y2="0" stroke="#d4a537" stroke-width="5"/>
+    <line x1="0" y1="-34" x2="0" y2="34" stroke="#d4a537" stroke-width="5"/>
+    <circle r="6" fill="#c0392b"/>
+    <path d="M0 0 m-14 0 a14 14 0 1 1 14 14 a10 10 0 1 1 -10 -10" fill="none" stroke="#e8e1c8" stroke-width="1.5"/>
+  </g>
+  <!-- jewels -->
+  <circle cx="98" cy="232" r="5" fill="#c0392b"/>
+  <circle cx="222" cy="232" r="5" fill="#c0392b"/>
+  <!-- tweezers -->
+  <g stroke="#dfe5ea" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M300 18 L176 112"/>
+    <path d="M286 6 L168 104"/>
+  </g>
+  <path d="M300 18 L286 6" stroke="#dfe5ea" stroke-width="9" stroke-linecap="round"/>
+  <!-- beetle held in the tips -->
+  <g transform="translate(160 118) rotate(-35)">
+    <ellipse rx="15" ry="20" fill="#3fa65a"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#1f2a33" stroke-width="2"/>
+    <circle cy="-24" r="8" fill="#2e7d43"/>
+    <circle cx="-3" cy="-26" r="1.6" fill="#ffffff"/>
+    <circle cx="3" cy="-26" r="1.6" fill="#ffffff"/>
+    <g stroke="#2e7d43" stroke-width="2.5" stroke-linecap="round">
+      <line x1="-14" y1="-8" x2="-24" y2="-14"/>
+      <line x1="-15" y1="2" x2="-26" y2="2"/>
+      <line x1="-14" y1="12" x2="-24" y2="18"/>
+      <line x1="14" y1="-8" x2="24" y2="-14"/>
+      <line x1="15" y1="2" x2="26" y2="2"/>
+      <line x1="14" y1="12" x2="24" y2="18"/>
+    </g>
+  </g>
+  <!-- tick of a fix done -->
+  <path d="M36 52 l14 14 l26 -30" fill="none" stroke="#7fd18f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

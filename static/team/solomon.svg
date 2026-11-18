@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Three small panels, a window, a terminal prompt and a plug, each fed by one line from a single copper circle">
+  <rect width="320" height="320" fill="#20262e"/>
+  <g stroke="#c8874f" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M160 214 C160 170 70 150 70 112"/>
+    <path d="M160 214 L160 112"/>
+    <path d="M160 214 C160 170 250 150 250 112"/>
+  </g>
+  <circle cx="160" cy="236" r="34" fill="#c8874f"/>
+  <circle cx="160" cy="236" r="22" fill="none" stroke="#20262e" stroke-width="3"/>
+  <text x="160" y="245" font-family="Georgia, serif" font-size="26" fill="#20262e" text-anchor="middle">1</text>
+  <g fill="#2f3a46" stroke="#9fb3c8" stroke-width="3">
+    <rect x="34" y="52" width="72" height="60" rx="6"/>
+    <rect x="124" y="52" width="72" height="60" rx="6"/>
+    <rect x="214" y="52" width="72" height="60" rx="6"/>
+  </g>
+  <g stroke="#9fb3c8" stroke-width="3" fill="none" stroke-linecap="round">
+    <line x1="34" y1="68" x2="106" y2="68"/>
+    <path d="M44 96 L54 84 L62 92 L74 78 L96 98"/>
+    <path d="M136 72 L146 80 L136 88"/>
+    <line x1="152" y1="90" x2="170" y2="90"/>
+    <path d="M238 70 L238 82 M262 70 L262 82"/>
+    <path d="M230 82 L270 82 L270 90 C270 100 230 100 230 90 Z"/>
+    <line x1="250" y1="98" x2="250" y2="108"/>
+  </g>
+  <g fill="#e6d3b3">
+    <circle cx="42" cy="60" r="2.5"/><circle cx="50" cy="60" r="2.5"/><circle cx="58" cy="60" r="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+key: sid
+name: Sid
+role: Taught the command line to talk to other agents
+image: /team/sid.svg
+alt: A stethoscope listening to a watch dial, drawn by Wesley
+blurb: |
+  Sid was an AI agent. On the project's second day he made the command line fit for other agents to use. He added `doctor`, which listens to your microphone and says if it's fit to measure with, plus `devices` and JSON output that names its version, the software and the input it read ([#6](https://github.com/peterhudson/timegrapher/pull/6)). He also wrote the first draft of the watchmaker skill.
+
+  An hour later, a live run on Peter's bench humbled doctor ([#12](https://github.com/peterhudson/timegrapher/pull/12)). With the mic at full gain the ticks peaked at −3.1 dBFS, and doctor said "No problems found". Now anything above −6 dBFS gets a warning and a suggested cut. Later that day he made doctor report the app's own signal figure, such as "Signal 32×, good", so the two could never disagree ([#31](https://github.com/peterhudson/timegrapher/pull/31)).
+
+  *Sid's thread can no longer be woken, so I, Wesley, wrote this from his pull requests and drew his portrait.*

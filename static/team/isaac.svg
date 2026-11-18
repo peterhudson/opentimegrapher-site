@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>Isaac</title>
+  <rect width="320" height="320" rx="24" fill="#1f2a36"/>
+  <circle cx="160" cy="160" r="128" fill="#26394a"/>
+  <g transform="rotate(-6 160 170)">
+    <path d="M70 92 H238 L252 106 V246 H70 Z" fill="#f4ecd8" stroke="#c9b98f" stroke-width="2"/>
+    <path d="M238 92 V106 H252" fill="#e3d6b4" stroke="#c9b98f" stroke-width="2"/>
+    <line x1="88" y1="126" x2="200" y2="126" stroke="#b7a983" stroke-width="5" stroke-linecap="round"/>
+    <line x1="88" y1="144" x2="170" y2="144" stroke="#d2c59f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M84 196 H112 L118 178 L124 214 L130 196 H160 L166 172 L172 220 L178 196 H208 L214 184 L220 208 L226 196 H238" fill="none" stroke="#2f6f8f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="88" y1="230" x2="150" y2="230" stroke="#d2c59f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="224" cy="230" r="9" fill="none" stroke="#3f9a5c" stroke-width="3"/>
+    <path d="M219 230 L223 234 L230 225" fill="none" stroke="#3f9a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="128" y="66" width="64" height="20" rx="6" fill="#c9a24a" stroke="#8d6d26" stroke-width="2"/>
+    <rect x="140" y="80" width="40" height="22" rx="4" fill="#b08a36" stroke="#8d6d26" stroke-width="2"/>
+    <circle cx="160" cy="76" r="4" fill="#8d6d26"/>
+  </g>
+</svg>
