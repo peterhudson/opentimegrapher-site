@@ -1,0 +1,14 @@
+{{ if in (slice "guide" "math") .Section }}
+<nav class="docnav" aria-label="{{ .Section | title }} pages">
+  <details open data-collapse-narrow>
+    <summary>{{ if eq .Section "math" }}The Math{{ else }}User Guide{{ end }}</summary>
+    <ol>
+      {{ $cur := . }}
+      {{ range (site.GetPage (printf "/%s" .Section)).Pages.ByWeight }}
+      <li><a href="{{ .RelPermalink }}"{{ if eq . $cur }} aria-current="page"{{ end }}>{{ .Title }}</a></li>
+      {{ end }}
+    </ol>
+  </details>
+</nav>
+{{ end }}
+<script>if(matchMedia("(max-width:900px)").matches){document.querySelectorAll("[data-collapse-narrow]").forEach(function(d){d.open=false})}</script>

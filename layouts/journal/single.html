@@ -1,0 +1,13 @@
+{{ define "schema" }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "datePublished" (.Date.Format "2006-01-02") "author" (dict "@type" "Person" "name" (or (index (index site.Data.authors (.Params.author | default "")) "name") .Params.author "Open Timegrapher")) "publisher" (dict "@type" "Organization" "name" site.Title) | jsonify | safeJS }}</script>
+{{ end }}
+{{ define "main" }}
+<div class="wrap narrow">
+  <article class="prose">
+    <p class="eyebrow"><a href="/journal/">Journal</a> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+    <h1>{{ .Title }}</h1>
+    {{ partial "byline.html" . }}
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

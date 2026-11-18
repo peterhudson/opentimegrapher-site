@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ "/" | relLangURL }}" aria-label="{{ site.Title }} home">
+      {{ partial "mark.html" . }}<span>Open Timegrapher</span>
+    </a>
+    <nav aria-label="Main">
+      {{- $current := . }}
+      {{- range site.Menus.main }}
+      <a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (and .Page (eq $current.Section .Page.Section) (ne $current.Section "")) }} aria-current="page"{{ end }}{{ if eq .Name "Download" }} class="nav-cta"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    </nav>
+  </div>
+</header>

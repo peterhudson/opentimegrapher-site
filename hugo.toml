@@ -1,0 +1,50 @@
+baseURL = "https://opentimegrapher.org/"
+title = "Open Timegrapher"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+# Synced guide pages are rebuilt from the app repo on every build.
+ignoreFiles = []
+
+[params]
+  description = "An open-source timegrapher for mechanical watches that measures every beat and keeps the record."
+  repo = "https://github.com/peterhudson/timegrapher"
+  releases = "https://github.com/peterhudson/timegrapher/releases"
+  siteRepo = "https://github.com/peterhudson/opentimegrapher-site"
+
+# One folder per language. Add a block here (de, fr, ja, ...) only when a
+# reviewed translation exists; hreflang links are written automatically.
+[languages.en]
+  languageName = "English"
+  weight = 1
+
+[menus]
+  [[menus.main]]
+    name = "Guide"
+    pageRef = "/guide"
+    weight = 10
+  [[menus.main]]
+    name = "The Math"
+    pageRef = "/math"
+    weight = 20
+  [[menus.main]]
+    name = "Journal"
+    pageRef = "/journal"
+    weight = 30
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 40
+  [[menus.main]]
+    name = "Download"
+    pageRef = "/download"
+    weight = 50
+
+[markup.goldmark.renderer]
+  unsafe = false
+[markup.highlight]
+  noClasses = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]

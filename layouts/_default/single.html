@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="wrap doc">
+  {{ partial "docnav.html" . }}
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ with .Params.source }}<p class="source">This page comes from the app's user guide at {{ $.Params.docsRef }}. <a href="{{ . }}">See it on GitHub</a>.</p>{{ end }}
+    {{ partial "prevnext.html" . }}
+  </article>
+</div>
+{{ end }}

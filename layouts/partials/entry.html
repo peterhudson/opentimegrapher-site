@@ -1,0 +1,5 @@
+<li class="entry">
+  <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+  <p class="meta">{{ partial "byline-short.html" . }} · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</li>
