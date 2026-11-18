@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="A watchmaker's loupe over a balance wheel and an escape wheel, with a small green tick in its lens">
+  <rect width="320" height="320" fill="#1e2a33"/>
+  <circle cx="160" cy="160" r="150" fill="#24333e"/>
+  <!-- escape wheel -->
+  <g transform="translate(205 210)" fill="none" stroke="#c9a45c" stroke-width="3">
+    <circle r="44"/>
+    <circle r="8" fill="#c9a45c"/>
+    <g stroke-width="2.5">
+      <line x1="0" y1="-8" x2="0" y2="-44"/><line x1="0" y1="8" x2="0" y2="44"/>
+      <line x1="-8" y1="0" x2="-44" y2="0"/><line x1="8" y1="0" x2="44" y2="0"/>
+    </g>
+    <path fill="#c9a45c" stroke="none" d="M0,-44 l6,-12 l3,12z M31,-31 l13,-4 l-5,12z M44,0 l12,6 l-12,3z M31,31 l4,13 l-12,-5z M0,44 l-6,12 l-3,-12z M-31,31 l-13,4 l5,-12z M-44,0 l-12,-6 l12,-3z M-31,-31 l-4,-13 l12,5z"/>
+  </g>
+  <!-- balance wheel -->
+  <g transform="translate(120 130)" fill="none" stroke="#d8c08a" stroke-width="5">
+    <circle r="62"/>
+    <line x1="-62" y1="0" x2="62" y2="0" stroke-width="4"/>
+    <circle r="7" fill="#d8c08a"/>
+    <g fill="#d8c08a" stroke="none">
+      <circle cx="0" cy="-62" r="5"/><circle cx="44" cy="-44" r="5"/><circle cx="62" cy="0" r="5"/><circle cx="44" cy="44" r="5"/>
+      <circle cx="0" cy="62" r="5"/><circle cx="-44" cy="44" r="5"/><circle cx="-62" cy="0" r="5"/><circle cx="-44" cy="-44" r="5"/>
+    </g>
+    <path d="M0,0 m12,0 a12,12 0 1,1 -4,-11 a18,18 0 1,1 -8,22 a26,26 0 1,1 12,-30" stroke="#8fb3c7" stroke-width="2"/>
+  </g>
+  <!-- loupe -->
+  <g>
+    <line x1="214" y1="104" x2="276" y2="42" stroke="#6b4f2c" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="170" cy="148" r="62" fill="#a9d4ea" fill-opacity="0.18" stroke="#e8e2d0" stroke-width="10"/>
+    <circle cx="170" cy="148" r="54" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+    <path d="M148,150 l16,17 l30,-36" fill="none" stroke="#5cc28a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M140,112 a44,44 0 0,1 30,-14" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
