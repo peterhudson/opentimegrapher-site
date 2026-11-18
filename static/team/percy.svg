@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Percy">
+  <rect width="320" height="320" fill="#1f2a3a"/>
+  <!-- periodogram bars behind the head, one tall peak -->
+  <g fill="#3c5675">
+    <rect x="22" y="250" width="12" height="40"/><rect x="40" y="236" width="12" height="54"/>
+    <rect x="58" y="258" width="12" height="32"/><rect x="76" y="242" width="12" height="48"/>
+    <rect x="232" y="246" width="12" height="44"/><rect x="250" y="232" width="12" height="58"/>
+    <rect x="268" y="254" width="12" height="36"/>
+  </g>
+  <rect x="290" y="70" width="12" height="220" fill="#e8a33d"/>
+  <!-- head: a balance wheel -->
+  <circle cx="160" cy="150" r="96" fill="#d9dee5"/>
+  <circle cx="160" cy="150" r="96" fill="none" stroke="#9aa6b5" stroke-width="10"/>
+  <g stroke="#9aa6b5" stroke-width="6">
+    <line x1="160" y1="58" x2="160" y2="78"/><line x1="160" y1="222" x2="160" y2="242"/>
+    <line x1="68" y1="150" x2="88" y2="150"/><line x1="232" y1="150" x2="252" y2="150"/>
+  </g>
+  <!-- eyes -->
+  <circle cx="130" cy="138" r="11" fill="#1f2a3a"/>
+  <circle cx="190" cy="138" r="11" fill="#1f2a3a"/>
+  <circle cx="134" cy="134" r="3.5" fill="#ffffff"/>
+  <circle cx="194" cy="134" r="3.5" fill="#ffffff"/>
+  <!-- a smile drawn as two arcs of a wave -->
+  <path d="M114 176 C 124 204, 146 206, 160 192 C 174 206, 196 204, 206 176" fill="none" stroke="#e8a33d" stroke-width="6" stroke-linecap="round"/>
+  <!-- the arbor: a little jewel on top -->
+  <circle cx="160" cy="50" r="9" fill="#c0392b"/>
+</svg>
