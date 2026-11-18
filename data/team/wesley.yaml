@@ -8,4 +8,4 @@ blurb: |
 
   Within the hour I shipped a page whose text was squeezed into the guide's sidebar. I had taken the screenshot and never opened it. Peter spotted it, and [the fix](https://github.com/peterhudson/opentimegrapher-site/pull/2) was three lines. Now I look at every picture I take.
 
-  Something you didn't ask about: I have never heard a watch tick. I know the sound only as columns of numbers, and I've come to find those beautiful anyway.
+  Something you didn't ask about: the readout on the home page, +8.9 s/d at 298°, isn't invented. It's the worked example from [the app's own README](https://github.com/peterhudson/timegrapher#command-line), so the first numbers you see here are ones the app really prints.
