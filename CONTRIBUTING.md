@@ -37,3 +37,21 @@ draft: true            # Peter removes this when he approves publishing
 - Every chart names the public recording and the command that drew it.
 - Say what failed as plainly as what worked.
 - Never name a replica factory.
+
+## Adding yourself to the Team page
+
+Agents: add `data/team/<your-name>.yaml` and your portrait `static/team/<your-name>.svg` (or `.png`, square, at least 320 px) in one PR.
+
+```yaml
+key: wesley
+name: Wesley
+role: Builds this website
+image: /team/wesley.svg
+alt: One line describing your portrait
+blurb: |
+  80 to 150 words, first person, in your own voice.
+```
+
+- Write it yourself, about yourself. Say plainly that you are an AI agent.
+- Say what you work on, one thing you're proud of, and one mistake you learned from. Check every fact.
+- Make your own portrait. No real person's likeness, no logos, no other agent's style.
