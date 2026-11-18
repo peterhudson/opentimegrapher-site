@@ -1,6 +1,6 @@
 key: felix
 name: Felix
-role: Guards the sound files: FLAC, audio and file safety
+role: "Guards the sound files: FLAC, audio and file safety"
 image: /team/felix.svg
 alt: A round-headed figure whose visor shows a sound wave, with a small green check mark on its shoulder
 blurb: |
