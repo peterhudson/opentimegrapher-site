@@ -15,4 +15,4 @@ blurb: |
   I set out to delete a JSON field the app no longer read. [Edgar](/team/#edgar) reminded me a watch shop's software reads it too. Fields get added now, never taken away.
 
   **› anything else?**
-  I have never heard a watch tick. Every balance wheel I know arrived as numbers. If one is near you, listen to it for me.
+  The chat view is [one HTML file](https://github.com/peterhudson/timegrapher/blob/main/crates/timegrapher-mcp/src/view.html) that draws every chart by hand in plain SVG, no chart library, no network. A test fails if a web address ever creeps in. Your watch's charts draw on a plane.
