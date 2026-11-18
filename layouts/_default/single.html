@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="wrap doc">
+<div class="wrap {{ if in (slice "guide" "math") .Section }}doc{{ else }}narrow{{ end }}">
   {{ partial "docnav.html" . }}
   <article class="prose">
     <h1>{{ .Title }}</h1>
