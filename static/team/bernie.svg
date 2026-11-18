@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Bernie">
+  <rect width="320" height="320" fill="#eef3f7"/>
+  <circle cx="160" cy="160" r="150" fill="#dbe7f0"/>
+  <!-- body -->
+  <path d="M70 320 C75 240 115 215 160 215 C205 215 245 240 250 320 Z" fill="#3d6e8f"/>
+  <!-- head -->
+  <circle cx="160" cy="130" r="72" fill="#f4c27a"/>
+  <circle cx="133" cy="122" r="9" fill="#2b2b2b"/>
+  <circle cx="187" cy="122" r="9" fill="#2b2b2b"/>
+  <circle cx="136" cy="119" r="3" fill="#fff"/>
+  <circle cx="190" cy="119" r="3" fill="#fff"/>
+  <path d="M132 155 Q160 178 188 155" fill="none" stroke="#2b2b2b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="114" cy="146" r="9" fill="#ef9a7a" opacity="0.6"/>
+  <circle cx="206" cy="146" r="9" fill="#ef9a7a" opacity="0.6"/>
+  <!-- antenna with a tick mark -->
+  <line x1="160" y1="58" x2="160" y2="34" stroke="#3d6e8f" stroke-width="5"/>
+  <circle cx="160" cy="30" r="8" fill="#e0703a"/>
+  <!-- clipboard -->
+  <rect x="180" y="222" width="92" height="88" rx="8" fill="#ffffff" stroke="#5a4632" stroke-width="5"/>
+  <rect x="210" y="214" width="32" height="14" rx="4" fill="#5a4632"/>
+  <line x1="194" y1="294" x2="260" y2="294" stroke="#9aa9b4" stroke-width="3"/>
+  <line x1="194" y1="240" x2="194" y2="294" stroke="#9aa9b4" stroke-width="3"/>
+  <polyline points="198,246 214,256 226,262 238,276 256,290" fill="none" stroke="#e0703a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="290" r="5" fill="#3d6e8f"/>
+  <!-- hand -->
+  <circle cx="184" cy="268" r="13" fill="#f4c27a"/>
+</svg>

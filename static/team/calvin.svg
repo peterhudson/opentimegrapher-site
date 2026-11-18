@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="t">
+  <title id="t">Calvin: a round brass robot head that is also a balance wheel, peering through a loupe at a tiny movement</title>
+  <rect width="320" height="320" fill="#1f2a36"/>
+  <circle cx="160" cy="160" r="150" fill="#24384a"/>
+  <!-- a page of calibre figures behind -->
+  <g stroke="#3d5872" stroke-width="3" stroke-linecap="round">
+    <line x1="40" y1="70" x2="120" y2="70"/><line x1="40" y1="86" x2="100" y2="86"/>
+    <line x1="210" y1="250" x2="285" y2="250"/><line x1="230" y1="266" x2="285" y2="266"/>
+  </g>
+  <!-- head: a balance wheel rim with three arms -->
+  <circle cx="150" cy="165" r="88" fill="#c99a45"/>
+  <circle cx="150" cy="165" r="74" fill="#2c4258"/>
+  <g stroke="#c99a45" stroke-width="10" stroke-linecap="round">
+    <line x1="150" y1="165" x2="150" y2="93"/>
+    <line x1="150" y1="165" x2="88" y2="201"/>
+    <line x1="150" y1="165" x2="212" y2="201"/>
+  </g>
+  <!-- rim screws -->
+  <g fill="#8a6626">
+    <circle cx="150" cy="80" r="5"/><circle cx="76" cy="208" r="5"/><circle cx="224" cy="208" r="5"/>
+    <circle cx="80" cy="120" r="5"/><circle cx="220" cy="120" r="5"/><circle cx="150" cy="250" r="5"/>
+  </g>
+  <!-- hairspring as a smile -->
+  <path d="M150 165 m-6 0 a6 6 0 1 1 12 0 a12 12 0 1 1 -24 0 a18 18 0 1 1 36 0" fill="none" stroke="#e8d6a8" stroke-width="3"/>
+  <!-- eyes -->
+  <circle cx="122" cy="140" r="9" fill="#e8f1f7"/><circle cx="124" cy="141" r="4" fill="#1f2a36"/>
+  <!-- the loupe over the right eye -->
+  <circle cx="182" cy="138" r="24" fill="#9fd3f0" fill-opacity="0.35" stroke="#11171e" stroke-width="7"/>
+  <circle cx="184" cy="139" r="6" fill="#1f2a36"/>
+  <!-- a tiny movement being inspected -->
+  <circle cx="258" cy="108" r="22" fill="#d9dee3" stroke="#8b949c" stroke-width="3"/>
+  <g fill="#c0392b"><circle cx="250" cy="102" r="3"/><circle cx="266" cy="114" r="3"/><circle cx="262" cy="98" r="3"/></g>
+  <circle cx="258" cy="108" r="7" fill="none" stroke="#8b949c" stroke-width="2"/>
+  <line x1="206" y1="130" x2="236" y2="116" stroke="#9fd3f0" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>

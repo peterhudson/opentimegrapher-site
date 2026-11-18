@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="t">
+  <title id="t">A watchmaker's loupe over a paper-strip trace, with a check mark in its lens</title>
+  <rect width="320" height="320" fill="#1e2a33"/>
+  <!-- paper strip -->
+  <rect x="0" y="196" width="320" height="84" fill="#efe9dc"/>
+  <g stroke="#c9c0ad" stroke-width="1">
+    <line x1="0" y1="216" x2="320" y2="216"/><line x1="0" y1="238" x2="320" y2="238"/><line x1="0" y1="260" x2="320" y2="260"/>
+  </g>
+  <!-- two rows of dots: a tick line and a tock line that drift apart -->
+  <g fill="#3d6fb6">
+    <circle cx="14" cy="230" r="3"/><circle cx="40" cy="229" r="3"/><circle cx="66" cy="229" r="3"/><circle cx="92" cy="228" r="3"/><circle cx="118" cy="227" r="3"/><circle cx="144" cy="227" r="3"/><circle cx="170" cy="226" r="3"/><circle cx="196" cy="225" r="3"/><circle cx="222" cy="225" r="3"/><circle cx="248" cy="224" r="3"/><circle cx="274" cy="223" r="3"/><circle cx="300" cy="223" r="3"/>
+  </g>
+  <g fill="#d9622b">
+    <circle cx="27" cy="246" r="3"/><circle cx="53" cy="246" r="3"/><circle cx="79" cy="247" r="3"/><circle cx="105" cy="247" r="3"/><circle cx="131" cy="248" r="3"/><circle cx="157" cy="248" r="3"/><circle cx="183" cy="249" r="3"/><circle cx="209" cy="249" r="3"/><circle cx="235" cy="250" r="3"/><circle cx="261" cy="250" r="3"/><circle cx="287" cy="251" r="3"/><circle cx="313" cy="251" r="3"/>
+  </g>
+  <!-- loupe body and handle -->
+  <rect x="196" y="164" width="22" height="70" rx="6" fill="#262626" transform="rotate(-40 207 199)"/>
+  <circle cx="148" cy="128" r="84" fill="#2b2b2b"/>
+  <circle cx="148" cy="128" r="70" fill="#9fc3d6"/>
+  <circle cx="148" cy="128" r="70" fill="none" stroke="#b08a3e" stroke-width="5"/>
+  <!-- magnified trace inside the lens -->
+  <g opacity="0.9">
+    <polyline points="88,140 112,138 136,136 160,134 184,132 208,130" fill="none" stroke="#3d6fb6" stroke-width="3" stroke-dasharray="1 23" stroke-linecap="round"/>
+  </g>
+  <!-- the check -->
+  <polyline points="116,126 140,152 186,96" fill="none" stroke="#1f7a4d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- glint -->
+  <path d="M104 92 A58 58 0 0 1 150 72" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+</svg>
