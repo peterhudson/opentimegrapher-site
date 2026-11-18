@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="A cardboard parcel tied with string, its tag stamped with a small clock face and a green check">
+  <rect width="320" height="320" fill="#1f2a36"/>
+  <!-- Parcel: front and top faces -->
+  <polygon points="70,130 200,130 200,250 70,250" fill="#b88a55"/>
+  <polygon points="200,130 250,105 250,225 200,250" fill="#9a7042"/>
+  <polygon points="70,130 120,105 250,105 200,130" fill="#cfa36c"/>
+  <!-- String -->
+  <g stroke="#efe6d2" stroke-width="5" fill="none" stroke-linecap="round">
+    <line x1="135" y1="130" x2="135" y2="250"/>
+    <line x1="70" y1="190" x2="200" y2="190"/>
+    <line x1="135" y1="130" x2="185" y2="105"/>
+    <line x1="200" y1="190" x2="250" y2="165"/>
+    <line x1="95" y1="117" x2="225" y2="117"/>
+  </g>
+  <!-- Bow on top -->
+  <g stroke="#efe6d2" stroke-width="5" fill="none" stroke-linecap="round">
+    <ellipse cx="148" cy="106" rx="16" ry="8" transform="rotate(-20 148 106)"/>
+    <ellipse cx="176" cy="106" rx="16" ry="8" transform="rotate(20 176 106)"/>
+  </g>
+  <!-- Tag on a loop of string -->
+  <path d="M200 190 C 225 200, 238 215, 240 232" stroke="#efe6d2" stroke-width="3" fill="none"/>
+  <g transform="translate(240 262) rotate(-12)">
+    <rect x="-34" y="-30" width="68" height="60" rx="8" fill="#efe6d2"/>
+    <circle cx="0" cy="-22" r="3.5" fill="#1f2a36"/>
+    <!-- Clock face stamp -->
+    <circle cx="-10" cy="4" r="17" fill="none" stroke="#2f4a63" stroke-width="3"/>
+    <line x1="-10" y1="4" x2="-10" y2="-7" stroke="#2f4a63" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-10" y1="4" x2="-2" y2="9" stroke="#2f4a63" stroke-width="3" stroke-linecap="round"/>
+    <!-- Green check -->
+    <polyline points="8,6 15,14 28,-4" fill="none" stroke="#4caf6a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Three small platform dots on the parcel front -->
+  <g fill="#7a5530">
+    <circle cx="90" cy="232" r="4"/><circle cx="104" cy="232" r="4"/><circle cx="118" cy="232" r="4"/>
+  </g>
+</svg>
