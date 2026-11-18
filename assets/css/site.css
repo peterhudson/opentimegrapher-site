@@ -1,0 +1,99 @@
+/* Open Timegrapher site. Data colours are the app's palette B (design guide, section 7). */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#161a21; --muted:#5a6372; --line:#dfe3ea;
+  --link:#1476bf; --rate:#b80c7e; --amp:#8b3df8; --be:#bc8422; --tick:#1476bf; --tock:#8f3e03;
+  --code-bg:#eef1f5;
+  --sans: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono: ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#101318; --surface:#171b22; --fg:#e6e9ee; --muted:#9aa3b1; --line:#2a303a;
+  --link:#6eb9fe; --rate:#e140a1; --amp:#9e6bff; --be:#f6b753; --tick:#6eb9fe; --tock:#ca6b35;
+  --code-bg:#1d222b; color-scheme: dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--sans)}
+a{color:var(--link)}
+img{max-width:100%;height:auto}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+h1,h2,h3{line-height:1.2;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(28px,4vw,42px);margin:0 0 .5em}
+.eyebrow{font:600 13px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 .75em}
+.eyebrow a{color:inherit}
+.muted{color:var(--muted)}
+
+.site-header{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;font-size:18px}
+.mark{width:28px;height:28px;color:var(--fg)}
+nav[aria-label="Main"]{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center}
+nav[aria-label="Main"] a{color:var(--muted);text-decoration:none;font-size:15px;padding:6px 0}
+nav[aria-label="Main"] a[aria-current]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--tick)}
+nav[aria-label="Main"] a.nav-cta{color:var(--fg);font-weight:600}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:72px 56px}
+.lede{font-size:19px;color:var(--muted);max-width:60ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.button{display:inline-block;background:var(--fg);color:var(--bg);padding:11px 20px;border-radius:6px;text-decoration:none;font-weight:600}
+.button.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.readout{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 24px;display:grid;gap:14px}
+.readout .r{display:grid;grid-template-columns:7.5em auto 1fr;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.readout span{color:var(--muted);font-size:14px}
+.readout b{font:600 34px/1 var(--mono);font-variant-numeric:tabular-nums}
+.readout i{font:400 15px var(--mono);color:var(--muted);font-style:normal}
+.readout .rate{color:var(--rate)} .readout .amp{color:var(--amp)} .readout .be{color:var(--be)}
+.readout figcaption{font-size:13px;color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-block:24px 72px;border-top:1px solid var(--line)}
+.pillars h2{font-size:19px;margin:24px 0 8px}
+.pillars p{margin:0;color:var(--muted)}
+.latest{padding-bottom:64px}
+
+.doc{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding-block:40px 72px}
+.docnav{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;font-size:14px}
+.docnav summary{font-weight:700;cursor:pointer;margin-bottom:8px}
+.docnav ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.docnav a{display:block;color:var(--muted);text-decoration:none;padding:4px 8px;border-radius:4px;line-height:1.35}
+.docnav a:hover{color:var(--fg)}
+.docnav a[aria-current]{color:var(--fg);background:var(--code-bg);font-weight:600}
+.narrow{padding-block:48px 72px}
+
+.prose{max-width:72ch;min-width:0}
+.prose h2{font-size:24px;margin:1.8em 0 .5em}
+.prose h3{font-size:19px;margin:1.5em 0 .4em}
+.prose p,.prose ul,.prose ol{margin:0 0 1em}
+.prose li{margin:.25em 0}
+.prose img{display:block;margin:1.25em 0;border-radius:6px;border:1px solid var(--line);background:#fff}
+.prose code{font:0.88em var(--mono);background:var(--code-bg);padding:.1em .35em;border-radius:4px}
+.prose pre{background:var(--code-bg);padding:14px 16px;border-radius:6px;overflow-x:auto;font-size:14px;line-height:1.5}
+.prose pre code{background:none;padding:0}
+.prose table{border-collapse:collapse;display:block;overflow-x:auto;font-size:15px;margin:1em 0}
+.prose th,.prose td{border-bottom:1px solid var(--line);padding:7px 12px 7px 0;text-align:left;vertical-align:top}
+.prose blockquote{margin:1em 0;padding-left:16px;border-left:3px solid var(--line);color:var(--muted)}
+.source{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:40px}
+.prevnext{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap-reverse;margin-top:24px;font-size:15px}
+.prevnext .next{margin-left:auto}
+.toc{padding-left:1.2em}
+
+.byline{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:0 0 2em;font-size:15px}
+.byline p{margin:.2em 0}
+.entries{list-style:none;padding:0;margin:0;display:grid;gap:28px}
+.entry h3{margin:0 0 4px;font-size:21px}
+.entry a{text-decoration:none}
+.entry .meta{color:var(--muted);font-size:14px;margin:0 0 6px}
+.entry p{margin:0}
+
+.site-footer{border-top:1px solid var(--line);background:var(--surface);font-size:14px;color:var(--muted)}
+.foot{padding-block:28px}
+.foot p{margin:.3em 0}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-block:48px 40px;gap:32px}
+  .pillars{grid-template-columns:1fr;gap:0}
+  .doc{grid-template-columns:1fr;gap:16px;padding-top:24px}
+  .docnav{position:static;max-height:none;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)}
+  .docnav details:not([open]) summary{margin:0}
+  .site-header{position:static}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}

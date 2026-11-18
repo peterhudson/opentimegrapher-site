@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="hero wrap">
+  <div class="hero-text">
+    <p class="eyebrow">Open-source · Mac, Windows, Linux</p>
+    <h1>A timegrapher that measures every beat, and keeps them.</h1>
+    <p class="lede">{{ site.Params.description }} Rate, amplitude and beat error live from a microphone, the paper strip, a history of your watches, and analysis that runs for days.</p>
+    <p class="actions"><a class="button" href="/download/">Download</a> <a class="button ghost" href="/guide/">Read the guide</a></p>
+  </div>
+  <figure class="readout" aria-label="Example readings from the command line">
+    <div class="r"><span>Rate</span><b class="rate">+8.9</b><i>± 0.2 s/d</i></div>
+    <div class="r"><span>Amplitude</span><b class="amp">298</b><i>± 0.6°</i></div>
+    <div class="r"><span>Beat error</span><b class="be">0.16</b><i>± 0.01 ms</i></div>
+    <figcaption>From the README's example: a 10-minute recording at 28,800 bph, lift angle 52°.</figcaption>
+  </figure>
+</section>
+<section class="wrap pillars">
+  <div><h2>Every beat, not an average</h2><p>Most timegraphers average a few seconds of sound into each reading. Open Timegrapher times each beat, so it can search hours of readings for what repeats once per turn of a wheel.</p></div>
+  <div><h2>Facts, not verdicts</h2><p>It reports what it measured and the conditions it found: clipping, a short take, an unknown lift angle. No grades. Reading the figures is the watchmaker's job.</p></div>
+  <div><h2>The math is open</h2><p>Every figure has one definition, written out in <a href="/math/">The Math</a>: how it is computed, why that way, and what it can't tell you.</p></div>
+</section>
+{{ with (where site.RegularPages "Section" "journal") }}
+<section class="wrap latest">
+  <h2>From the journal</h2>
+  <ul class="entries">{{ range first 3 . }}{{ partial "entry.html" . }}{{ end }}</ul>
+</section>
+{{ end }}
+{{ end }}

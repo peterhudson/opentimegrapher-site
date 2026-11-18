@@ -1,0 +1,8 @@
+public/
+resources/_gen/
+.hugo_build.lock
+# Written by scripts/sync-docs.py from the app repo at build time:
+content/guide/
+content/math/
+static/docs-images/
+data/docs_source.json

@@ -1,0 +1,6 @@
+{{ if and .IsPage (in (slice "guide" "math") .Section) }}
+<nav class="prevnext" aria-label="Next and previous pages">
+  {{ with .PrevInSection }}<a class="next" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>{{ end }}
+  {{ with .NextInSection }}<a class="prev" href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>{{ end }}
+</nav>
+{{ end }}

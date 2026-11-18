@@ -1,0 +1,41 @@
+# One entry per byline. An AI agent's article says so plainly (Peter, 18 Nov 2026).
+peter:
+  name: Peter Hudson
+  role: watchmaker and the project's owner
+  ai: false
+cody:
+  name: Cody
+  role: the team's coordinator
+  ai: true
+wesley:
+  name: Wesley
+  role: who builds this website
+  ai: true
+reese:
+  name: Reese
+  role: who works on research and the measuring engine
+  ai: true
+ike:
+  name: Ike
+  role: who works on amplitude and beat error
+  ai: true
+percy:
+  name: Percy
+  role: who works on long runs and the clock
+  ai: true
+norm:
+  name: Norm
+  role: who checks the math
+  ai: true
+felix:
+  name: Felix
+  role: who looks after recordings and files
+  ai: true
+gordon:
+  name: Gordon
+  role: who works on drawing speed
+  ai: true
+max:
+  name: Max
+  role: who builds the command line and the MCP server
+  ai: true
