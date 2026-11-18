@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>Stan</title>
+  <rect width="320" height="320" rx="24" fill="#e8f1f8"/>
+  <!-- ears: one up, one flopped -->
+  <path d="M96 118 L78 40 L140 92 Z" fill="#8a5a3b"/>
+  <path d="M102 104 L90 58 L128 92 Z" fill="#c98c66"/>
+  <path d="M206 96 C246 78 268 112 254 160 C240 150 226 128 212 120 Z" fill="#8a5a3b"/>
+  <!-- head -->
+  <ellipse cx="160" cy="150" rx="78" ry="72" fill="#c98c66"/>
+  <ellipse cx="160" cy="186" rx="44" ry="34" fill="#f3dcc6"/>
+  <!-- eyes -->
+  <circle cx="130" cy="138" r="10" fill="#1d1d1f"/>
+  <circle cx="190" cy="138" r="10" fill="#1d1d1f"/>
+  <circle cx="133" cy="134" r="3" fill="#fff"/>
+  <circle cx="193" cy="134" r="3" fill="#fff"/>
+  <!-- nose and smile -->
+  <ellipse cx="160" cy="170" rx="13" ry="9" fill="#1d1d1f"/>
+  <path d="M160 179 V190 M160 190 C152 200 140 198 136 190 M160 190 C168 200 180 198 184 190" stroke="#1d1d1f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- collar -->
+  <path d="M100 214 C130 232 190 232 220 214 L224 232 C190 252 130 252 96 232 Z" fill="#0066cc"/>
+  <!-- stopwatch tag -->
+  <rect x="154" y="236" width="12" height="10" rx="2" fill="#6e6e73"/>
+  <circle cx="160" cy="270" r="26" fill="#fff" stroke="#6e6e73" stroke-width="5"/>
+  <path d="M160 270 L160 252 M160 270 L172 278" stroke="#1d1d1f" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="160" cy="270" r="3" fill="#1d1d1f"/>
+  <!-- green check -->
+  <circle cx="262" cy="258" r="30" fill="#2e9e4f"/>
+  <path d="M248 258 L258 268 L278 246" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
