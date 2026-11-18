@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="t">
+  <title id="t">Gus: an open book whose pages hold a watch dial, with a fountain pen and a loupe</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#f4ead8"/>
+      <stop offset="1" stop-color="#d9c7a5"/>
+    </radialGradient>
+    <linearGradient id="page" x1="0" x2="1">
+      <stop offset="0" stop-color="#fffdf7"/>
+      <stop offset="1" stop-color="#efe6d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" fill="url(#bg)"/>
+  <!-- book cover -->
+  <path d="M40 228 L160 248 L280 228 L280 92 L160 112 L40 92 Z" fill="#2f5d62"/>
+  <!-- pages -->
+  <path d="M52 218 L158 236 L158 112 C120 98 84 94 52 98 Z" fill="url(#page)" stroke="#c9b892" stroke-width="1.5"/>
+  <path d="M268 218 L162 236 L162 112 C200 98 236 94 268 98 Z" fill="url(#page)" stroke="#c9b892" stroke-width="1.5"/>
+  <!-- text lines, left page -->
+  <g stroke="#9b8c70" stroke-width="3" stroke-linecap="round">
+    <line x1="68" y1="124" x2="140" y2="130"/>
+    <line x1="68" y1="140" x2="132" y2="145"/>
+    <line x1="68" y1="156" x2="142" y2="162"/>
+    <line x1="68" y1="172" x2="120" y2="176"/>
+    <line x1="68" y1="188" x2="138" y2="194"/>
+    <line x1="68" y1="204" x2="128" y2="209"/>
+  </g>
+  <!-- dial on right page -->
+  <g transform="translate(214 166)">
+    <circle r="40" fill="#fbf7ee" stroke="#3a3a3a" stroke-width="3"/>
+    <g stroke="#3a3a3a" stroke-width="2.5" stroke-linecap="round">
+      <line y1="-34" y2="-27"/><line x1="34" x2="27"/><line y1="34" y2="27"/><line x1="-34" x2="-27"/>
+    </g>
+    <g stroke="#3a3a3a" stroke-width="1.2">
+      <line y1="-34" y2="-30" transform="rotate(30)"/><line y1="-34" y2="-30" transform="rotate(60)"/>
+      <line y1="-34" y2="-30" transform="rotate(120)"/><line y1="-34" y2="-30" transform="rotate(150)"/>
+      <line y1="-34" y2="-30" transform="rotate(210)"/><line y1="-34" y2="-30" transform="rotate(240)"/>
+      <line y1="-34" y2="-30" transform="rotate(300)"/><line y1="-34" y2="-30" transform="rotate(330)"/>
+    </g>
+    <line y2="-20" stroke="#2f5d62" stroke-width="4" stroke-linecap="round" transform="rotate(-60)"/>
+    <line y2="-29" stroke="#2f5d62" stroke-width="3" stroke-linecap="round" transform="rotate(45)"/>
+    <line y1="6" y2="-31" stroke="#c0503a" stroke-width="1.4" transform="rotate(160)"/>
+    <circle r="3.5" fill="#c0503a"/>
+  </g>
+  <!-- loupe -->
+  <g transform="translate(250 70) rotate(35)">
+    <rect x="-7" y="22" width="14" height="40" rx="5" fill="#7a4e2d"/>
+    <circle r="26" fill="#cfe6e8" fill-opacity="0.55" stroke="#4a4a4a" stroke-width="6"/>
+    <path d="M-12 -12 A16 16 0 0 1 6 -16" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- fountain pen -->
+  <g transform="translate(74 66) rotate(-35)">
+    <rect x="-8" y="-50" width="16" height="70" rx="7" fill="#1f2d3a"/>
+    <rect x="-8" y="-6" width="16" height="5" fill="#c9a24a"/>
+    <path d="M-7 20 L7 20 L0 44 Z" fill="#c9a24a"/>
+    <line x1="0" y1="27" x2="0" y2="40" stroke="#1f2d3a" stroke-width="1.2"/>
+  </g>
+  <!-- ink stroke drawn by the pen -->
+  <path d="M100 98 C112 92 120 100 132 94" stroke="#1f2d3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="A balance wheel drawn as a face, with a hairspring smile and six position marks around it">
+  <rect width="320" height="320" fill="#1f3b33"/>
+  <circle cx="160" cy="160" r="150" fill="#24463c"/>
+  <!-- six position marks: DU, DD, CU, CD, CL, CR -->
+  <g fill="#e8c873">
+    <circle cx="160" cy="26" r="7"/><circle cx="276" cy="93" r="7"/><circle cx="276" cy="227" r="7"/>
+    <circle cx="160" cy="294" r="7"/><circle cx="44" cy="227" r="7"/><circle cx="44" cy="93" r="7"/>
+  </g>
+  <!-- the balance rim -->
+  <circle cx="160" cy="160" r="104" fill="none" stroke="#e8c873" stroke-width="14"/>
+  <g fill="#e8c873">
+    <circle cx="160" cy="56" r="8"/><circle cx="250" cy="108" r="8"/><circle cx="250" cy="212" r="8"/>
+    <circle cx="160" cy="264" r="8"/><circle cx="70" cy="212" r="8"/><circle cx="70" cy="108" r="8"/>
+  </g>
+  <!-- arms -->
+  <path d="M160 63 V257 M76 160 H244" stroke="#c9a85a" stroke-width="6" stroke-linecap="round"/>
+  <!-- eyes: two jewels -->
+  <circle cx="125" cy="128" r="15" fill="#b5304a"/><circle cx="195" cy="128" r="15" fill="#b5304a"/>
+  <circle cx="120" cy="123" r="5" fill="#f3c9d2"/><circle cx="190" cy="123" r="5" fill="#f3c9d2"/>
+  <!-- hairspring smile -->
+  <path d="M104 186 C124 222 196 222 216 186 M116 190 C132 212 188 212 204 190 M128 194 C140 204 180 204 192 194" fill="none" stroke="#f0dfa8" stroke-width="4" stroke-linecap="round"/>
+  <!-- collet -->
+  <circle cx="160" cy="160" r="12" fill="#1f3b33" stroke="#e8c873" stroke-width="4"/>
+</svg>

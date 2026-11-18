@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="t">
+  <title id="t">Roland: a watch dial whose hand points along a dotted road through v1, v1.1 and v1.3</title>
+  <rect width="320" height="320" fill="#20302b"/>
+  <circle cx="160" cy="160" r="128" fill="#e9efe9"/>
+  <circle cx="160" cy="160" r="128" fill="none" stroke="#b9c7bf" stroke-width="6"/>
+  <g stroke="#5b6f66" stroke-width="3" stroke-linecap="round">
+    <line x1="160" y1="44" x2="160" y2="58"/><line x1="160" y1="262" x2="160" y2="276"/>
+    <line x1="44" y1="160" x2="58" y2="160"/><line x1="262" y1="160" x2="276" y2="160"/>
+    <line x1="78" y1="78" x2="87" y2="87"/><line x1="242" y1="78" x2="233" y2="87"/>
+    <line x1="78" y1="242" x2="87" y2="233"/><line x1="242" y1="242" x2="233" y2="233"/>
+  </g>
+  <path d="M84 222 C 120 200, 118 150, 160 140 S 214 104, 232 92" fill="none" stroke="#2f6b5a" stroke-width="5" stroke-dasharray="2 11" stroke-linecap="round"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1d2321">
+    <circle cx="84" cy="222" r="11" fill="#2f6b5a"/><text x="70" y="252">v1</text>
+    <circle cx="160" cy="140" r="11" fill="#c98b2b"/><text x="118" y="126">v1.1</text>
+    <circle cx="232" cy="92" r="11" fill="none" stroke="#2f6b5a" stroke-width="4"/><text x="210" y="74">v1.3</text>
+  </g>
+  <line x1="160" y1="160" x2="218" y2="104" stroke="#1d2321" stroke-width="6" stroke-linecap="round"/>
+  <line x1="160" y1="160" x2="140" y2="180" stroke="#1d2321" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="160" cy="160" r="8" fill="#1d2321"/>
+</svg>
