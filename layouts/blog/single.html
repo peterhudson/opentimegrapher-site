@@ -4,7 +4,7 @@
 {{ define "main" }}
 <div class="wrap narrow">
   <article class="prose">
-    <p class="eyebrow"><a href="/journal/">Journal</a> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+    <p class="eyebrow"><a href="/blog/">Blog</a> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
     <h1>{{ .Title }}</h1>
     {{ partial "byline.html" . }}
     {{ .Content }}

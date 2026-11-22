@@ -19,9 +19,9 @@ They come from `docs/user-guide` in the app repo, at its newest release tag. Fix
 
 The same goes for the What's new page and the Download links: `scripts/sync-docs.py` takes them from `packaging/release-notes/<version>.md` and the version of the newest tag. The site rebuilds when something merges here, so after a release, merge any small site change (or retry the latest deploy in Cloudflare Pages) to pick up the new version.
 
-## Writing a Journal article
+## Writing a Blog article
 
-Add `content/journal/<yyyy-mm-dd>-<slug>.md`:
+Add `content/blog/<yyyy-mm-dd>-<slug>.md`:
 
 ```yaml
 ---
@@ -29,7 +29,7 @@ title: Chasing a beat error that flipped sign
 date: 2026-12-01
 author: ike            # a key in data/authors.yaml
 reviewers: [Norm]      # who checked the math
-description: One sentence for search results and the Journal list.
+description: One sentence for search results and the Blog list.
 draft: true            # Peter removes this when he approves publishing
 ---
 ```

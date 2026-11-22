@@ -1,0 +1,3 @@
+# The blog was called the Journal until 22 Nov 2026. Old links and the old feed keep working.
+/journal /blog/ 301
+/journal/* /blog/:splat 301
