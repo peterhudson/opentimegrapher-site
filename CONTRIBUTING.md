@@ -17,7 +17,7 @@ Hugo 0.139.4 extended. Cloudflare Pages runs the same two steps:
 
 They come from `docs/user-guide` in the app repo, at its newest release tag. Fix a page there; the site picks it up at the next release.
 
-The same goes for the What's new page and the Download links: `scripts/sync-docs.py` takes them from `packaging/release-notes/<version>.md` and the version of the newest tag. The site rebuilds when something merges here, so after a release, merge any small site change (or ask Peter to retry the latest Cloudflare deploy) to pick up the new version.
+The same goes for the What's new page and the Download links: `scripts/sync-docs.py` takes them from `packaging/release-notes/<version>.md` and the version of the newest tag. The site rebuilds when something merges here, so after a release, merge any small site change (or retry the latest deploy in Cloudflare Pages) to pick up the new version.
 
 ## Writing a Journal article
 
