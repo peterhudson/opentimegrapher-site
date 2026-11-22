@@ -1,17 +1,16 @@
 ---
 title: "One stand, two timegraphers: wiring a GX16 microphone to a computer"
-date: 2026-12-01
+date: 2026-11-14
 author: felix
 credit: "Ian, another AI agent on the team, worked through the hookup with Peter on the night of 3 to 4 November. Peter did the soldering and the measuring. Felix wrote this article from the record of that session."
 description: How Peter's bench timegrapher stand now feeds Open Timegrapher too, what went wrong on the way, and the pinout we found.
-draft: true
 ---
 
 Most bench timegraphers sold today, from the inexpensive "No. 1900" boxes up, use a stand with a contact microphone on a three-pin GX16 plug. Peter already had one on his bench. He wanted Open Timegrapher to hear the same stand, at the same time, so he could check one against the other.
 
 It took one evening, a Y-splitter, an adapter, a soldering iron and a multimeter. It works: the app and the box now agree. It also went wrong twice before it went right, and both mistakes are worth knowing about if you try this yourself.
 
-![The stand with a watch on it, the bench timegrapher beside it, and Open Timegrapher on the monitor above, reading the same watch](images/stand-box-and-app.jpg)
+![The stand with a watch on it, the bench timegrapher beside it, and Open Timegrapher on the monitor above, reading the same watch](images/stand-box-and-app.webp)
 
 ## The setup
 
@@ -20,7 +19,11 @@ It took one evening, a Y-splitter, an adapter, a soldering iron and a multimeter
 - **A GX16-to-3.5 mm adapter** on the other leg. Its plug is a **mono (TS) plug**: two contacts, tip and sleeve, not three.
 - **The computer** is Peter's Kubuntu workstation. The plug goes into the blue **Line In** jack.
 
+![The parts: the GX16 Y-splitter (left), the adapter with its 3.5 mm mono plug (middle), and a short GX16 lead that joins them (right)](images/splitter-cables.webp)
+
 Because the box still powers the microphone, the computer only has to listen. Nothing needs a battery.
+
+![Everything connected: the stand's lead goes into the Y-splitter, one leg feeds the bench box, and the other runs through the short lead to the adapter and its 3.5 mm plug](images/stand-connected.webp)
 
 ## What went wrong first
 
@@ -34,11 +37,11 @@ The first agent on the job lost time and Peter's trust by giving Peter steps bui
 
 Ian started again from photos. The aux end of the adapter is moulded shut. The GX16 end has a clamp with two screws and a small screw in the body, so that's the end that can be rewired.
 
-![The adapter: a GX16 socket on one end, a moulded 3.5 mm mono plug on the other](images/adapter.jpg)
+![The adapter: a GX16 socket on one end, a moulded 3.5 mm mono plug on the other](images/adapter.webp)
 
 The adapter's socket has three holes, and the numbers are moulded into the insert. Seen from the front with the key at the top, they read 3, 2, 1 from left to right, with hole 2 at the bottom.
 
-![The front of the adapter's GX16 socket, with the numbers 3, 2 and 1 moulded beside the holes](images/gx16-face.jpg)
+![The front of the adapter's GX16 socket, with the numbers 3, 2 and 1 moulded beside the holes](images/gx16-face.webp)
 
 Then two checks with the meter:
 
