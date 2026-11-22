@@ -110,3 +110,8 @@ nav[aria-label="Main"] a.nav-cta{color:var(--fg);font-weight:600}
 .downloads a{font-weight:600}
 .downloads span{color:var(--muted);font-size:14px}
 .downloads-note{font-size:14px;color:var(--muted)}
+.prose a.zoom{display:block;cursor:zoom-in}
+.prose a.zoom img{background:none;border:0;border-radius:0}
+.lightbox{padding:0;border:0;background:none;max-width:96vw;max-height:96vh;cursor:zoom-out;overflow:visible}
+.lightbox::backdrop{background:color-mix(in srgb,var(--bg) 95%,transparent)}
+.lightbox img{display:block;max-width:96vw;max-height:96vh;width:auto;height:auto}

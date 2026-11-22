@@ -10,4 +10,23 @@
     {{ .Content }}
   </article>
 </div>
+{{- /* Click an image to see it larger; click anywhere or press Esc to close. */}}
+<dialog class="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+(function(){
+  var d=document.querySelector("dialog.lightbox");
+  if(!d||!d.showModal)return;
+  var im=d.querySelector("img");
+  document.querySelectorAll("a.zoom").forEach(function(a){
+    a.addEventListener("click",function(e){
+      e.preventDefault();
+      var s=a.querySelector("img");
+      im.src=a.href; im.alt=s?s.alt:"";
+      d.showModal();
+    });
+  });
+  d.addEventListener("click",function(){d.close()});
+  d.addEventListener("close",function(){im.removeAttribute("src")});
+})();
+</script>
 {{ end }}
