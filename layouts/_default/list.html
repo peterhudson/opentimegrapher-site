@@ -8,6 +8,7 @@
     {{ if eq .Section "math" }}
     <ol class="toc">{{ range .Pages.ByWeight }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ol>
     {{ end }}
+    {{ with .Params.sourceKind }}<p class="source">This page comes from the app's {{ . }} at {{ $.Params.docsRef }}. <a href="{{ $.Params.source }}">See it on GitHub</a>.</p>{{ end }}
   </article>
 </div>
 {{ end }}

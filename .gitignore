@@ -6,3 +6,5 @@ content/guide/
 content/math/
 static/docs-images/
 data/docs_source.json
+data/release.json
+content/whats-new/
