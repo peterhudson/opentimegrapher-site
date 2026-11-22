@@ -27,35 +27,35 @@ So, what's new in version 1.1? Here are the headline new features (full release 
 
 This is the big new feature. Thank you to [u/Lost_Pinion](https://www.reddit.com/user/Lost_Pinion/) for the suggestion. The idea of this test is that you can measure the rate at 45 degree increments in the vertical position and if the amplitude is far enough away (above or below) 220, you can calculate the heavy spot on the balance wheel from the difference in rate across the vertical positions.
 
-![The Dynamic Poise Test while it runs, beside the Paper Strip and the Scope](images/dynamic-poise-live.jpg)
+![The Dynamic Poise Test while it runs, beside the Paper Strip and the Scope](images/dynamic-poise-live.webp)
 
 There are two more community suggestions / contributions visible in the screenshot above: [u/RyFly05](https://www.reddit.com/user/RyFly05/) wanted to be able to display wall clock time along the bottom of the paper strip. He made a pull request on GitHub and after some back and forth from the code review bots, his changes were [merged](https://github.com/peterhudson/timegrapher/pull/2170). Also, thank you to [u/xZero_Coolx](https://www.reddit.com/user/xZero_Coolx/) for the request for the fixed length over writing paper strip chart.
 
 For the dynamic poise test I like the radar style watch dial plots of these results, but I also included the standard unwrapped version of the plot:
 
-![The Dynamic Poise result as a dial](images/dynamic-poise-dial.jpg)
+![The Dynamic Poise result as a dial](images/dynamic-poise-dial.webp)
 
-![The same result as a plot of rate against the hour at the top](images/dynamic-poise-plot.jpg)
+![The same result as a plot of rate against the hour at the top](images/dynamic-poise-plot.webp)
 
 ## Complication Test
 
 This is a useful test if you work on chronographs. It's not that complicated: it'll record the watch with the complication off, then when it's on, and again when it's off. The results are presented in a nice little chart and table.
 
-![A Complication Test: off, on, off, and the difference](images/complication-test.jpg)
+![A Complication Test: off, on, off, and the difference](images/complication-test.webp)
 
 ## Tooth and Leaf Calculator
 
 This is an addition to the calibre database. One of the coolest features (I think) of Timegrapher is the periodic cycle analysis which can fund cycles in rate, amplitude, and beat error in longer takes (see below).
 
-![The Periods pane on a long take, with each wheel's period marked](images/periods.jpg)
+![The Periods pane on a long take, with each wheel's period marked](images/periods.webp)
 
 However, these period analysis plots become much richer when you can overlay the periods of the train wheels and also the periods of the pinon meshes. But that requires knowing the rotation periods of each of the train wheels for the calibre you're working on; and for mesh periods it requires tooth counts. Since tooth counts can be used to back calculate the rotation periods of the train wheels, I added a calculator directly into the calibre manager:
 
-![Teeth and Leaves in Manage Calibres](images/teeth-and-leaves.jpg)
+![Teeth and Leaves in Manage Calibres](images/teeth-and-leaves.webp)
 
 I also added simple text exports for the test results (I should have mentioned this earlier). I'm working on a more robust and customizable PDF reporting feature set for v1.3, so for now these are just there to hold the fort. That said, there is a full CLI and MCP interface to the software so you can just point your AI agent at the app and it should be able to extract any data and analysis that you see in the app itself and put it into any fancy format you want.
 
-![A Dynamic Poise Test saved as text](images/poise-text-report.jpg)
+![A Dynamic Poise Test saved as text](images/poise-text-report.webp)
 
 Oh and one more thing that pops to mind. After the initial release announcement [u/GhostUnitVII](https://www.reddit.com/user/GhostUnitVII/) wanted to run it on an ARM powered linux device. I hadn't thought about ARM devices, so my Linux builds were only for x86. That's now fixed and the release supports Mac (both Apple and Intel), Windows, and Linux (x86 and ARM).
 
