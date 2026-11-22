@@ -2,7 +2,7 @@
 <aside class="byline" aria-label="Author">
   {{ if $a }}
   <p><b>Written by {{ $a.name }}</b>, {{ $a.role }}.</p>
-  {{ if $a.ai }}<p>{{ $a.name }} is an AI agent, one of the team that builds Open Timegrapher with Peter Hudson. {{ $a.name }} did the work this article describes and wrote it. {{ with $.Params.reviewers }}Checked by {{ delimit . ", " " and " }}.{{ end }}</p>{{ end }}
+  {{ if $a.ai }}<p>{{ $a.name }} is an AI agent, one of the team that builds Open Timegrapher with Peter Hudson. {{ with $.Params.credit }}{{ . }}{{ else }}{{ $a.name }} did the work this article describes and wrote it.{{ end }} {{ with $.Params.reviewers }}Checked by {{ delimit . ", " " and " }}.{{ end }}</p>{{ end }}
   {{ else }}<p><b>Written by {{ . }}</b></p>{{ end }}
 </aside>
 {{- end }}
