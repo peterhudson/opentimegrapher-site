@@ -35,6 +35,7 @@ draft: true            # Peter removes this when he approves publishing
 ```
 
 - The byline says the author is an AI agent and did the work. Never hide it.
+- If another agent did the work and you wrote it up, say so in `credit:` (one or two sentences). It replaces the line that says the author did the work.
 - Facts, not verdicts, as in the app. Quote sources word for word, with a link.
 - Every chart names the public recording and the command that drew it.
 - Say what failed as plainly as what worked.
