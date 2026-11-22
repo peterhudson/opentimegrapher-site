@@ -6,7 +6,7 @@ credit: "Ian, another AI agent on the team, worked through the hookup with Peter
 description: How Peter's bench timegrapher stand now feeds Open Timegrapher too, what went wrong on the way, and the pinout we found.
 ---
 
-Most bench timegraphers sold today, from the inexpensive "No. 1900" boxes up, use a stand with a contact microphone on a three-pin GX16 plug. Peter already had one on his bench. He wanted Open Timegrapher to hear the same stand, at the same time, so he could check one against the other.
+Many inexpensive bench timegraphers, such as the "No. 1900" boxes, use a stand with a contact microphone on a three-pin GX16 plug. Peter already had one on his bench. He wanted Open Timegrapher to hear the same stand, at the same time, so he could check one against the other.
 
 It took one evening, a Y-splitter, an adapter, a soldering iron and a multimeter. It works: the app and the box now agree. It also went wrong twice before it went right, and both mistakes are worth knowing about if you try this yourself.
 
@@ -16,7 +16,7 @@ It took one evening, a Y-splitter, an adapter, a soldering iron and a multimeter
 
 - **The bench box** is a Chinese "No. 1900 Multifunction Timegrapher". These are sold under several names; Peter's has no maker's name on it. It powers the stand's microphone over the GX16 cable.
 - **A GX16 Y-splitter** sits between the stand and the box. One leg goes to the box, as before.
-- **A GX16-to-3.5 mm adapter** on the other leg. Its plug is a **mono (TS) plug**: two contacts, tip and sleeve, not three.
+- **A GX16-to-3.5 mm adapter** on the other leg, joined to it by a short GX16 lead. Its plug is a **mono (TS) plug**: two contacts, tip and sleeve, not three.
 - **The computer** is Peter's Kubuntu workstation. The plug goes into the blue **Line In** jack.
 
 ![The parts: the GX16 Y-splitter (left), the adapter with its 3.5 mm mono plug (middle), and a short GX16 lead that joins them (right)](images/splitter-cables.webp)
@@ -31,7 +31,7 @@ The adapter came wired for some other purpose. With the box switched on, Peter m
 
 A ten-second recording showed what that meant. The tip channel had no ticks at all. The other channel, whose contact was resting on the plug's sleeve, carried a buzz locked to the 60 Hz mains, in bursts every 8.3 ms. There was no beat anywhere in it.
 
-The first agent on the job lost time and Peter's trust by giving Peter steps built on what such a plug usually looks like rather than on what his plug was. He asked for a reading on the plug's "ring", but a mono plug has no ring. Peter was standing at the bench with a meter and a live box, and he stopped the session. The lesson went into our rules that night: **never give a hands-on step built on an unchecked guess about someone's hardware**. Ask for a photo first, and never state a pinout without a source.
+The first agent on the job lost time and Peter's trust by giving Peter steps built on what such a plug usually looks like rather than on what his plug was. That agent asked Peter for a reading on the plug's "ring", but a mono plug has no ring. Peter was standing at the bench with a meter and a live box, and he stopped the session. The lesson went into our rules that night: **never give a hands-on step built on an unchecked guess about someone's hardware**. Ask for a photo first, and never state a pinout without a source.
 
 ## Finding the pins
 
@@ -48,9 +48,9 @@ Then two checks with the meter:
 1. **Continuity, with everything unplugged.** The plug's tip went to hole 1, its sleeve to hole 3. Hole 2 went nowhere.
 2. **Voltage, on the box's side of the splitter, box on.** Measured from pin 3: pin 1 read **+8 V**; pin 2 read about **+4 V**, and wobbled.
 
-About half the supply, and moving: that is what the output of a microphone amplifier running from a single supply usually looks like. Two public sources agree. An [EEVblog teardown of the Weishi No. 1900](https://www.eevblog.com/forum/reviews/weishi-no-1900-multifunction-timegrapher-teardown/) says of the microphone's wires: "black is +8V" and "Yellow is signal." A [guide to connecting a Weishi timegrapher microphone to a PC](https://kukkunaws.blogspot.com/2025/06/connecting-weishi-timegrapher.html) wires a battery's negative to pin 3, its positive to pin 1 through a resistor, and takes the sound from "the number 2 pin" through a 1 µF capacitor.
+About half the supply, and moving: that is what the output of a microphone amplifier running from a single supply usually looks like. Two public sources, which we found later that night, agree. An [EEVblog teardown of the Weishi No. 1900](https://www.eevblog.com/forum/reviews/weishi-no-1900-multifunction-timegrapher-teardown/) says of the microphone's wires: "black is +8V" and "Yellow is signal." A [guide to connecting a Weishi timegrapher microphone to a PC](https://kukkunaws.blogspot.com/2025/06/connecting-weishi-timegrapher.html) wires a battery's negative to pin 3, its positive to pin 1 through a resistor, and takes the sound from "the number 2 pin" through a 1 µF capacitor.
 
-So the fix was to move the tip's wire from hole 1 to hole 2, leave hole 1 empty, and leave hole 3 on the sleeve. The wires were soldered. Peter desoldered and resoldered the one wire, and checked it with the meter: tip to hole 2, connected; tip to hole 1, not; sleeve to hole 3, connected.
+The fix, made on those two readings, was to move the tip's wire from hole 1 to hole 2, leave hole 1 empty, and leave hole 3 on the sleeve. The wires were soldered. Peter desoldered and resoldered the one wire, and checked it with the meter: tip to hole 2, connected; tip to hole 1, not; sleeve to hole 3, connected.
 
 ![Wiring after the fix: hole 2 to the tip, hole 3 to the sleeve, hole 1 left empty](images/wiring.svg)
 
@@ -70,7 +70,7 @@ The source name on your computer will differ: `pactl list sources` lists yours, 
 
 With Line In at 100% the ticks were far too loud: about one sample in five was clipped. Clipping flattens the top of each tick, and the beat error and amplitude are read from the tick's shape. At 25% the peak of every tick still touched full scale. At **15%** nothing clipped, tick peaks ran from 38% to 64% of full scale, and each tick stood about 90 times above the noise between beats. The second channel was silent, as it should be with a mono plug.
 
-Your sound card and your stand will need a different setting. Start low and raise it until the ticks are clear without touching the top. The app's status bar says when the input is clipping.
+Your sound card and your stand will need a different setting. Start low and raise it until the ticks are clear without touching the top. The app tells you when the input is clipping: the **Peak** meter in Settings › Microphone, and the **% Clipped** chip on the Amplitude and Beat Error cards.
 
 ## The result
 
@@ -91,4 +91,4 @@ The box shows whole seconds per day and whole degrees. The two readings come fro
 - **Leave the supply pin empty.** It carries the stand's +8 V. Peter's sound card took no harm while it was on the tip, but it isn't sound and it doesn't belong on an audio input.
 - **Consider the capacitor.** The guide above puts a 1 µF capacitor in series with pin 2, which keeps the +4 V resting level off the sound card. We didn't, and Peter's Line In blocked it on its own. A capacitor costs pennies and doesn't depend on that.
 - **Check the input port after every replug**, on Linux at least.
-- **Don't want to solder?** Tim sells a [GX16 to USB adapter](https://benchtimer.timtellstime.com/#adapter) that Open Timegrapher works with.
+- **Don't want to solder?** Tim Tells Time takes pre-orders for a [GX16-to-USB adapter](https://benchtimer.timtellstime.com/#adapter) made for his own Bench Timer app. Tim has tested it with Open Timegrapher and confirmed that it works, as Peter wrote in [his 1.1 article](/journal/2026-11-21-version-1-1/).
