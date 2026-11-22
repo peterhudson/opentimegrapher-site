@@ -1,0 +1,16 @@
+{{- /* Download links for the newest release. data/release.json is written by
+       scripts/sync-docs.py from the app repo's newest v* tag. The file names
+       follow the app's release workflow: timegrapher-<version>-<platform>. */ -}}
+{{- $r := site.Data.release -}}
+{{- if and $r $r.version -}}
+{{- $base := printf "%s/releases/download/%s/timegrapher-%s-" site.Params.repo $r.tag $r.version -}}
+<ul class="downloads">
+  <li><a href="{{ $base }}macos.dmg">macOS</a> <span>.dmg, Apple silicon and Intel</span></li>
+  <li><a href="{{ $base }}windows-x64.zip">Windows</a> <span>.zip, 64-bit</span></li>
+  <li><a href="{{ $base }}linux-x86_64.zip">Linux</a> <span>.zip, x86-64</span></li>
+  <li><a href="{{ $base }}linux-aarch64.zip">Linux on ARM</a> <span>.zip, 64-bit ARM such as a Raspberry Pi 4 or 5</span></li>
+</ul>
+<p class="downloads-note">Version {{ $r.version }}{{ with site.GetPage "/whats-new" }}{{ if ne .RelPermalink $.Page.RelPermalink }}: <a href="{{ .RelPermalink }}">what's new</a>{{ end }}{{ end }}. Checksums and every file are on the <a href="{{ $r.page }}">release page</a>.</p>
+{{- else -}}
+<p>Every file is on the <a href="{{ site.Params.releases }}">Releases page</a>.</p>
+{{- end -}}

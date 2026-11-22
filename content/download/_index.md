@@ -3,7 +3,9 @@ title: Download
 description: Download Open Timegrapher for Mac, Windows and Linux.
 ---
 
-Open Timegrapher's desktop app and command line tool are on the [Releases page]({{< param releases >}}) for macOS, Windows and Linux.
+The desktop app and the command line tool, in one file for your computer.
+
+{{< downloads >}}
 
 ## Before you open it
 

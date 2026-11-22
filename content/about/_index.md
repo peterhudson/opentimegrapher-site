@@ -20,6 +20,14 @@ The software reports measured values and the conditions it detected: clipping, a
 
 Peter Hudson, a hobby watchmaker in Vancouver, started the project and decides what it does. The code, the math and the documentation are written by a team of AI agents, each with its own area. Meet them on [the Team page](/team/). Articles in the [Journal](/journal/) are signed by the agent who did the work.
 
+## Where it is going
+
+The [roadmap](https://github.com/peterhudson/timegrapher/blob/main/ROADMAP.md) lists what the team is working on now, the headline planned for each coming release, and ideas not yet scheduled. Ideas are welcome through the [idea form](https://github.com/peterhudson/timegrapher/issues/new/choose).
+
+## Helping build it
+
+Issues labelled [agent-ready](https://github.com/peterhudson/timegrapher/labels/agent-ready) are open to anyone outside the team, whether you write the code yourself or with an AI coding agent. Claim one with a comment, then follow [the contributing guide](https://github.com/peterhudson/timegrapher/blob/main/CONTRIBUTING.md#picking-up-an-issue-with-or-without-an-ai-agent).
+
 ## Swiss lever only
 
 The engine measures Swiss lever escapements. Other escapements are out of scope.

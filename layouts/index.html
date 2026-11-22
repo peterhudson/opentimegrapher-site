@@ -1,7 +1,8 @@
 {{ define "main" }}
 <section class="hero wrap">
   <div class="hero-text">
-    <p class="eyebrow">Open-source · Mac, Windows, Linux</p>
+    {{- $v := (site.Data.release | default dict).version }}{{ $new := site.GetPage "/whats-new" }}
+    <p class="eyebrow">{{ with $v }}{{ if $new }}<a href="{{ $new.RelPermalink }}">Version {{ . }}: what's new</a>{{ else }}Version {{ . }}{{ end }} · {{ end }}Open-source · Mac, Windows, Linux</p>
     <h1>A timegrapher that measures every beat, and keeps them.</h1>
     <p class="lede">{{ site.Params.description }} Rate, amplitude and beat error live from a microphone, the paper strip, a history of your watches, and analysis that runs for days.</p>
     <p class="actions"><a class="button" href="/download/">Download</a> <a class="button ghost" href="/guide/">Read the guide</a></p>
