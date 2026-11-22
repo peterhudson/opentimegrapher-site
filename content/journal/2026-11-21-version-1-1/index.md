@@ -1,6 +1,6 @@
 ---
 title: "v1.1 of Timegrapher (free / open source) for Mac/PC/Linux"
-date: 2026-11-22
+date: 2026-11-21
 author: peter
 description: Peter's announcement of version 1.1, as posted on r/watchrepair on 21 November 2026.
 ---
