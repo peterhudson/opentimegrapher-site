@@ -19,9 +19,9 @@
   <div><h2>Facts, not verdicts</h2><p>It reports what it measured and the conditions it found: clipping, a short take, an unknown lift angle. No grades. Reading the figures is the watchmaker's job.</p></div>
   <div><h2>The math is open</h2><p>Every figure has one definition, written out in <a href="/math/">The Math</a>: how it is computed, why that way, and what it can't tell you.</p></div>
 </section>
-{{ with (where site.RegularPages "Section" "journal") }}
+{{ with (where site.RegularPages "Section" "blog") }}
 <section class="wrap latest">
-  <h2>From the journal</h2>
+  <h2>From the blog</h2>
   <ul class="entries">{{ range first 3 . }}{{ partial "entry.html" . }}{{ end }}</ul>
 </section>
 {{ end }}

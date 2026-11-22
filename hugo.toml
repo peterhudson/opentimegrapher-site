@@ -28,8 +28,8 @@ ignoreFiles = []
     pageRef = "/math"
     weight = 20
   [[menus.main]]
-    name = "Journal"
-    pageRef = "/journal"
+    name = "Blog"
+    pageRef = "/blog"
     weight = 30
   [[menus.main]]
     name = "Team"

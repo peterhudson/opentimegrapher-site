@@ -1,5 +1,5 @@
 ---
-title: Journal
+title: Blog
 description: Long articles on why Open Timegrapher works the way it does, including what we tried that failed.
 ---
 
