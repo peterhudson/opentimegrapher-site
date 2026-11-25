@@ -1,6 +1,6 @@
 # Fixtures
 
-`calibres-export.json.gz` is `timegrapher calibres export --json` from the app repo at commit `04785ea` (peterhudson/timegrapher#2281), gzipped. The calibre pages are built from it until the app repo publishes the export from `main` at a fixed address (peterhudson/timegrapher#2290). Then `scripts/sync-calibres.py` downloads that file instead and this copy goes.
+`calibres-export.json.gz` is `timegrapher calibres export --json` from the app repo at commit `32740f4` (main after peterhudson/timegrapher#2296), gzipped. The calibre pages are built from it until the app repo publishes the export from `main` at a fixed address (peterhudson/timegrapher#2290). Then `scripts/sync-calibres.py` downloads that file instead and this copy goes.
 
 To refresh it from an app checkout:
 
