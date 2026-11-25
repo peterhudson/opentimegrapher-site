@@ -5,7 +5,7 @@
 {{- $e := partialCached "calibres/export.html" . -}}
 {{- $h := $e.headings -}}{{- $w := site.Data.calibre_words -}}
 {{- $c := .Params.calibre -}}
-{{- /* The app repo's Calibre data issue form, filled in with this calibre and page: the "Report a correction" button and the Wheels ask. */ -}}
+{{- /* The app repo's Calibre data issue form, filled in with this calibre and page. */ -}}
 {{- $fix := printf "https://github.com/peterhudson/timegrapher/issues/new?template=calibre.yml&labels=calibre&title=%s&calibre=%s" (printf $w.correction_title $c.title | urlquery) (printf "%s (%s)" $c.title .Permalink | urlquery) -}}
 {{- if ne .RelPermalink .Params.want }}{{ errorf "calibres: %s was built at %s" .Params.want .RelPermalink }}{{ end -}}
 {{- $root := (site.GetPage "/calibres").RelPermalink -}}
@@ -61,7 +61,7 @@
          other wheel. A cell in a row's "blank" applies but is not known yet;
          a cell neither filled nor blank does not apply and stays empty.
          data-wheel and data-field are where editing hooks in. */}}
-    {{- $counted := false }}
+    {{- $counted := false }}{{/* Read by the correction block below. */}}
     <section><h2>{{ $h.wheels }}</h2>
       <table class="cal-wheels">
         <thead><tr><td></td><th scope="col">{{ $h.teeth }}</th><th scope="col">{{ $h.leaves }}</th><th scope="col">{{ $h.period }}</th></tr></thead>
@@ -73,9 +73,6 @@
         </tbody>
       </table>
       <p class="muted cal-note">{{ $h.wheels_key }}</p>
-      {{- if not $counted }}
-      <p class="cal-note"><a href="{{ $fix }}">{{ $h.wheels_ask }}</a></p>
-      {{- end }}
     </section>
     {{- with $c.related }}
     <section><h2>{{ $h.related }}</h2>
@@ -100,6 +97,10 @@
     {{- end }}
     <div class="cal-fix">
       <a class="button" href="{{ $fix }}">{{ $w.correction_button }}</a>
+      {{- /* On a page with no wheel counts, the export's ask, beside the button that sends them in. */}}
+      {{- if not $counted }}
+      <p>{{ $h.wheels_ask }}</p>
+      {{- end }}
       <p>{{ $w.correction_text }}</p>
     </div>
     {{ partial "calibres/licence.html" . }}
