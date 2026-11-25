@@ -75,7 +75,8 @@
       </ol>
     </section>
     {{- with $c.notes }}
-    <details class="cal-notes"><summary>{{ $h.notes }}</summary><p>{{ . }}</p></details>
+    {{- /* The notes cite the app repo's issues as "#1822": each links to its issue, so a reader can see what it says. */}}
+    <details class="cal-notes"><summary>{{ $h.notes }}</summary><p>{{ replaceRE `(^|[^&\w])#(\d{2,5})\b` "${1}<a href=\"https://github.com/peterhudson/timegrapher/issues/${2}\">#${2}</a>" (. | htmlEscape) | safeHTML }}</p></details>
     {{- end }}
     <div class="cal-fix">
       {{- $fix := printf "https://github.com/peterhudson/timegrapher/issues/new?template=calibre.yml&labels=calibre&title=%s&calibre=%s" (printf $w.correction_title $c.title | urlquery) (printf "%s (%s)" $c.title $.Permalink | urlquery) }}
