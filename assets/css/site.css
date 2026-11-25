@@ -131,9 +131,20 @@ nav[aria-label="Main"] a[aria-current],.nav-cta[aria-current]{color:var(--fg);bo
 .downloads-note{font-size:14px;color:var(--muted)}
 .prose a.zoom{display:block;cursor:zoom-in}
 .prose a.zoom img{background:none;border:0;border-radius:0}
-.lightbox{padding:0;border:0;background:none;max-width:96vw;max-height:96vh;cursor:zoom-out;overflow:visible}
+/* The lightbox (partials/lightbox.html). dvh keeps the picture clear of
+   Safari's toolbars on an iPhone; vh is the fallback. */
+.lightbox{padding:0;border:0;background:none;max-width:96vw;max-height:96vh;max-height:96dvh;cursor:zoom-out;overflow:visible}
 .lightbox::backdrop{background:color-mix(in srgb,var(--bg) 95%,transparent)}
-.lightbox img{display:block;max-width:96vw;max-height:96vh;width:auto;height:auto}
+.lightbox img{display:block;max-width:96vw;max-height:calc(96vh - 56px);max-height:calc(96dvh - 56px);width:auto;height:auto;background:#fff}
+.lightbox-bar{display:flex;align-items:center;gap:8px;margin:0 0 8px}
+.lightbox-bar button{font:600 15px/1 var(--sans);color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:10px 14px;min-height:44px;min-width:44px;cursor:pointer}
+.lightbox-bar .lightbox-prev,.lightbox-bar .lightbox-next{font-size:24px;padding:6px 12px}
+.lightbox-bar button[hidden],.lightbox-count[hidden]{display:none}
+.lightbox-bar button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.lightbox-count{font:14px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;min-width:4.5em;text-align:center}
+.lightbox-close{margin-left:auto}
+html:has(dialog.lightbox[open]){overflow:hidden}
+a.zoom{cursor:zoom-in}
 
 /* Calibre pages (/calibres/, site#37). Layout B: main column and a side card. */
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -189,6 +200,9 @@ nav[aria-label="Main"] a[aria-current],.nav-cta[aria-current]{color:var(--fg);bo
 .cal-docs{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .cal-docs li{border:1px solid var(--line);border-radius:6px;padding:8px 12px;display:grid;gap:2px}
 .cal-docs span{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.cal-docs li.has-thumb a{display:flex;align-items:center;gap:12px}
+.cal-docs li.has-thumb img{flex:none;width:64px;height:64px;object-fit:contain;margin:0}
+.cal-docs li.has-thumb > span{padding-left:76px}
 sup.src{font-size:.7em;line-height:0;margin-left:1px}
 sup.src a{text-decoration:none}
 .cal-wheels{border-collapse:collapse;font-size:15px}
