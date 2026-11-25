@@ -21,8 +21,7 @@
   {{- if $card }}
   <aside class="cal-card">
     {{- range $c.pictures }}
-    {{- $src := replace .url site.Params.calibreMirror.raw site.Params.calibreMirror.cdn }}
-    <figure><a href="{{ $src }}"><img src="{{ $src }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
+    <figure><a href="{{ .url }}"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
     {{- end }}
     {{- if or $c.specs $c.functions }}
     <ul class="cal-specs">

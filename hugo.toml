@@ -11,11 +11,6 @@ ignoreFiles = []
   repo = "https://github.com/peterhudson/timegrapher"
   releases = "https://github.com/peterhudson/timegrapher/releases"
   siteRepo = "https://github.com/peterhudson/opentimegrapher-site"
-  # Calibre pictures load from the mirror through jsDelivr's cache; documents
-  # keep the export's raw address, as one is over jsDelivr's 20 MB cap (Hugh, #40).
-  [params.calibreMirror]
-    raw = "https://raw.githubusercontent.com/peterhudson/timegrapher-calibres/main/"
-    cdn = "https://cdn.jsdelivr.net/gh/peterhudson/timegrapher-calibres@main/"
 
 # One folder per language. Add a block here (de, fr, ja, ...) only when a
 # reviewed translation exists; hreflang links are written automatically.
