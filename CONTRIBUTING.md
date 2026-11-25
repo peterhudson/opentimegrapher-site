@@ -21,7 +21,7 @@ The same goes for the What's new page and the Download links: `scripts/sync-docs
 
 ## The calibre pages are not edited here
 
-Every page under `/calibres/` is made at build time from the app's calibre export (`timegrapher calibres export --json`), by `content/calibres/_content.gotmpl`. `scripts/sync-calibres.py` (run by `sync-docs.py`) puts the export where Hugo reads it. Fix a calibre in the app repo's table; fix a heading or a figure's wording in the app repo's `calibre_page.rs`. The few words the export doesn't carry yet are in `data/calibre_words.yaml` until it does.
+Every page under `/calibres/` is made at build time from the app's calibre export (`timegrapher calibres export --json`), by `content/calibres/_content.gotmpl`. `scripts/sync-calibres.py` (run by `sync-docs.py`) downloads the export from the app repo's rolling `calibre-data` pre-release, which the app repo republishes from `main` whenever the table changes, and puts it where Hugo reads it. A merged calibre fix reaches the pages at the next site build. To build from a local export instead: `python3 scripts/sync-calibres.py export.json.gz`. Fix a calibre in the app repo's table; fix a heading or a figure's wording in the app repo's `calibre_page.rs`. The few words the export doesn't carry yet are in `data/calibre_words.yaml` until it does.
 
 ## Writing a Blog article
 
