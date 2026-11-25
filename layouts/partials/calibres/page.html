@@ -13,7 +13,7 @@
     <p class="crumbs"><a href="{{ $root }}">{{ $h.index }}</a> / <a href="{{ $root }}{{ $c.maker_slug }}/">{{ $c.maker }}</a></p>
     <h1>{{ $c.title }}</h1>
     {{- with $c.also_known_as }}<p class="lede">{{ . }}</p>{{ end }}
-    <p class="cal-figures">{{ $c.figures }}</p>
+    <p class="cal-figures">{{ range $i, $part := split $c.figures " · " }}{{ if $i }}&nbsp;· {{ end }}<span>{{ $part }}</span>{{ end }}</p>
     {{- with $c.escapement }}<p class="cal-escapement" title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
     {{- with $c.made }}<p class="cal-made" title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
   </header>
@@ -21,7 +21,8 @@
   {{- if $card }}
   <aside class="cal-card">
     {{- range $c.pictures }}
-    <figure><a href="{{ .url }}"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
+    {{- $src := replace .url site.Params.calibreMirror.raw site.Params.calibreMirror.cdn }}
+    <figure><a href="{{ $src }}"><img src="{{ $src }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
     {{- end }}
     {{- if or $c.specs $c.functions }}
     <ul class="cal-specs">
@@ -40,8 +41,9 @@
 
   <div class="cal-body">
     {{- with $c.summary }}
-    <section><h2 title="{{ $h.summary_hover }}">{{ $h.summary }}</h2>
+    <section><h2>{{ $h.summary }}</h2>
       {{- range . }}<p>{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
+      <p class="muted cal-note">{{ $h.summary_hover }}</p>
     </section>
     {{- end }}
     {{- with $c.issues }}
@@ -69,7 +71,7 @@
       <ol class="cal-sources">
         {{- range $c.sources }}
         <li id="source-{{ .number }}" value="{{ .number }}">{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}
-          {{- range .quotes }} <span class="cal-quote">{{ . }}</span>{{ end }}</li>
+          {{- with .quotes }} <span class="cal-quote">{{ delimit . " · " }}</span>{{ end }}</li>
         {{- end }}
       </ol>
     </section>

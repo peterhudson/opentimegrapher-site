@@ -169,6 +169,8 @@ nav[aria-label="Main"] a[aria-current],.nav-cta[aria-current]{color:var(--fg);bo
 .cal-head{grid-area:head;min-width:0}
 .cal-body{grid-area:body;min-width:0}
 .cal-card{grid-area:card;align-self:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font-size:16px}
+.cal-figures span{white-space:nowrap}
+.cal-note{font-size:14px}
 .cal-figures{font:600 19px/1.4 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:0 0 12px}
 .cal-escapement,.cal-made{margin:0 0 8px}
 .cal-body section{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
@@ -203,4 +205,4 @@ sup.src a{text-decoration:none}
   .cal-card img{max-height:320px;width:auto;margin:0 auto}
 }
 /* On a phone the calibre's title already names its maker. */
-@media (max-width:600px){.cal-figures{font-size:16px}.cal{padding-top:24px}.cal-table .c-maker{display:none}.cal-table td:first-child{white-space:normal;min-width:8em}.cal input[type=search]{font-size:16px}}
+@media (max-width:600px){.cal{padding-top:24px}.cal-table .c-maker{display:none}.cal-table td:first-child{white-space:normal;min-width:8em}.cal input[type=search]{font-size:16px}}
