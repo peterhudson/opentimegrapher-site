@@ -21,7 +21,7 @@
   {{- if $card }}
   <aside class="cal-card">
     {{- range $c.pictures }}
-    <figure><a href="{{ .url }}"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
+    <figure><a class="zoom" href="{{ .url }}"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
     {{- end }}
     {{- if or $c.specs $c.functions }}
     <ul class="cal-specs">
@@ -32,7 +32,12 @@
     {{- with $c.documents }}
     <h2 class="cal-card-head">{{ $h.documents }}</h2>
     <ul class="cal-docs">
-      {{- range . }}<li><a href="{{ .url }}">{{ .kind }}</a><span>{{ .file }}</span></li>{{ end }}
+      {{- range . }}
+      {{- /* An image document shows a thumbnail and opens in the lightbox; a PDF stays a plain link (#43). */}}
+      {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") (lower (path.Ext .url)) }}
+      <li class="has-thumb"><a class="zoom" href="{{ .url }}"><img src="{{ .url }}" alt="" loading="lazy">{{ .kind }}</a><span>{{ .file }}</span></li>
+      {{- else }}<li><a href="{{ .url }}">{{ .kind }}</a><span>{{ .file }}</span></li>{{ end }}
+      {{- end }}
     </ul>
     {{- end }}
   </aside>
@@ -86,3 +91,6 @@
     {{ partial "calibres/licence.html" . }}
   </div>
 </div>
+{{- if or $c.pictures $c.documents }}
+{{ partial "lightbox.html" . }}
+{{- end }}

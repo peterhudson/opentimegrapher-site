@@ -1,0 +1,27 @@
+{{- /* The one lightbox on the site (blog pictures, calibre pictures and
+       documents). Any link with class "zoom" to an image opens it here.
+       Without JavaScript, or with a modifier key, the link opens the image
+       itself. Esc, the Close button or a click outside the image closes it,
+       and focus goes back to the link. */ -}}
+<dialog class="lightbox" aria-label="Enlarged image">
+  <button type="button" class="lightbox-close" autofocus>Close</button>
+  <img alt="">
+</dialog>
+<script>
+(function(){
+  var d=document.querySelector("dialog.lightbox");
+  if(!d||!d.showModal)return;
+  var im=d.querySelector("img"),opener=null;
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a.zoom");
+    if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();
+    var s=a.querySelector("img");
+    im.src=a.href; im.alt=(s&&s.alt)||(a.textContent||"").trim();
+    opener=a;
+    d.showModal();
+  });
+  d.addEventListener("click",function(){d.close()});
+  d.addEventListener("close",function(){im.removeAttribute("src");if(opener){opener.focus();opener=null}});
+})();
+</script>

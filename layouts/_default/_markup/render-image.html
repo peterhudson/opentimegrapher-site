@@ -1,4 +1,4 @@
-{{- /* Blog images open larger on click (a <dialog> in blog/single.html).
+{{- /* Blog images open larger on click (partials/lightbox.html).
        Without JavaScript the link opens the image itself. Other sections keep plain images. */ -}}
 {{- if eq .Page.Section "blog" -}}
 <a class="zoom" href="{{ .Destination | safeURL }}"><img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy"{{ with .Title }} title="{{ . }}"{{ end }}></a>
