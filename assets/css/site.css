@@ -164,12 +164,17 @@ nav[aria-label="Main"] a[aria-current],.nav-cta[aria-current]{color:var(--fg);bo
 .cal-results{list-style:none;padding:0;margin:0 0 16px;max-height:60vh;overflow:auto}
 .cal-results li{display:flex;flex-wrap:wrap;gap:2px 16px;align-items:baseline;border-bottom:1px solid var(--line);padding:7px 0}
 .cal-results span{font:14px var(--mono);color:var(--muted)}
-.cal-page{display:grid;grid-template-columns:minmax(0,1fr);column-gap:40px}
-.cal-page.has-card{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto 1fr;grid-template-areas:"head card" "body card"}
-.cal-head{grid-area:head;min-width:0}
-.cal-body{grid-area:body;min-width:0}
-.cal-card{grid-area:card;align-self:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font-size:16px}
+/* Plain flow (head, card, body) unless the window is wide enough for the
+   side card; only then a grid, with every area named. */
+@media (min-width:900.02px){
+  .cal-page.has-card{display:grid;column-gap:40px;grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto 1fr;grid-template-areas:"head card" "body card"}
+  .cal-page.has-card .cal-head{grid-area:head;min-width:0}
+  .cal-page.has-card .cal-body{grid-area:body;min-width:0}
+  .cal-page.has-card .cal-card{grid-area:card}
+}
+.cal-card{align-self:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font-size:16px}
 .cal-figures span{white-space:nowrap}
+.cal-figures{overflow-wrap:anywhere}
 .cal-note{font-size:14px}
 .cal-figures{font:600 19px/1.4 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:0 0 12px}
 .cal-escapement,.cal-made{margin:0 0 8px}
@@ -200,7 +205,6 @@ sup.src a{text-decoration:none}
 .cal-fix{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-top:32px}
 .cal-fix p{margin:10px 0 0;color:var(--muted);font-size:15px}
 @media (max-width:900px){
-  .cal-page.has-card{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"head" "card" "body"}
   .cal-card{margin:8px 0 0}
   .cal-card img{max-height:320px;width:auto;margin:0 auto}
 }
