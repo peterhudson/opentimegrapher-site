@@ -134,3 +134,79 @@ nav[aria-label="Main"] a[aria-current],.nav-cta[aria-current]{color:var(--fg);bo
 .lightbox{padding:0;border:0;background:none;max-width:96vw;max-height:96vh;cursor:zoom-out;overflow:visible}
 .lightbox::backdrop{background:color-mix(in srgb,var(--bg) 95%,transparent)}
 .lightbox img{display:block;max-width:96vw;max-height:96vh;width:auto;height:auto}
+
+/* Calibre pages (/calibres/, site#37). Layout B: main column and a side card. */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cal{padding-block:40px 72px}
+.cal h1{margin-bottom:.3em}
+.cal h2{font-size:21px;margin:0 0 .5em}
+.cal .lede{font-size:18px;margin:0 0 20px}
+.crumbs{font-size:14px;color:var(--muted);margin:0 0 10px}
+.crumbs a{color:var(--muted)}
+.cal-tabs{display:flex;gap:20px;border-bottom:1px solid var(--line);margin:0 0 20px}
+.cal-tabs a{color:var(--muted);text-decoration:none;padding:8px 0;font-weight:600}
+.cal-tabs a[aria-current]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--tick)}
+.cal-filter,.cal-search label{display:block;margin:0 0 16px}
+.cal input[type=search]{width:100%;font:inherit;font-size:17px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.cal input[type=search]:focus-visible{outline:2px solid var(--link);outline-offset:1px}
+.cal-table-wrap{overflow-x:auto}
+.cal-table{border-collapse:collapse;width:100%;font-size:15px}
+.cal-table th{font-size:13px;font-weight:600;color:var(--muted);text-align:left;border-bottom:1px solid var(--line);padding:8px 16px 8px 0;white-space:nowrap}
+.cal-table td{border-bottom:1px solid var(--line);padding:7px 16px 7px 0;vertical-align:top}
+.cal-table td:first-child{white-space:nowrap}
+.num{font-family:var(--mono);font-size:.92em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cal-licence{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:40px}
+.cal-common{list-style:none;padding:0;margin:8px 0 32px;display:flex;flex-wrap:wrap;gap:8px}
+.cal-common a{display:inline-block;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 13px;text-decoration:none;font-size:15px}
+.cal-makers{list-style:none;padding:0;margin:0;columns:4 220px;column-gap:32px;font-size:15px}
+.cal-makers li{break-inside:avoid;padding:2px 0}
+.cal-makers span{color:var(--muted);font-size:13px}
+.cal-results{list-style:none;padding:0;margin:0 0 16px;max-height:60vh;overflow:auto}
+.cal-results li{display:flex;flex-wrap:wrap;gap:2px 16px;align-items:baseline;border-bottom:1px solid var(--line);padding:7px 0}
+.cal-results span{font:14px var(--mono);color:var(--muted)}
+/* Plain flow (head, card, body) unless the window is wide enough for the
+   side card; only then a grid, with every area named. */
+@media (min-width:900.02px){
+  .cal-page.has-card{display:grid;column-gap:40px;grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto 1fr;grid-template-areas:"head card" "body card"}
+  .cal-page.has-card .cal-head{grid-area:head;min-width:0}
+  .cal-page.has-card .cal-body{grid-area:body;min-width:0}
+  .cal-page.has-card .cal-card{grid-area:card}
+}
+.cal-card{align-self:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font-size:16px}
+.cal-figures span{white-space:nowrap}
+.cal-figures{overflow-wrap:anywhere}
+.cal-note{font-size:14px}
+.cal-figures{font:600 19px/1.4 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:0 0 12px}
+.cal-escapement,.cal-made{margin:0 0 8px}
+.cal-body section{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+.cal-body section p{margin:0 0 .6em}
+.cal-card figure{margin:0 0 12px}
+.cal-card img{display:block;border:1px solid var(--line);border-radius:6px;background:#fff}
+.cal-card figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+.cal-specs{list-style:none;padding:0;margin:0}
+.cal-specs li{border-bottom:1px solid var(--line);padding:8px 0}
+.cal .cal-card-head{font:600 13px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:16px 0 8px}
+.cal-docs{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.cal-docs li{border:1px solid var(--line);border-radius:6px;padding:8px 12px;display:grid;gap:2px}
+.cal-docs span{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+sup.src{font-size:.7em;line-height:0;margin-left:1px}
+sup.src a{text-decoration:none}
+.cal-wheels{border-collapse:collapse;font-size:15px}
+.cal-wheels th{font-weight:400;text-align:left;padding:6px 32px 6px 0;border-bottom:1px solid var(--line)}
+.cal-wheels td{padding:6px 0;border-bottom:1px solid var(--line);text-align:right}
+.cal-sources{padding-left:1.8em;margin:0;font-size:15px}
+.cal-sources li{margin:.3em 0;overflow-wrap:anywhere}
+.cal-sources li:target{background:var(--code-bg);border-radius:4px}
+.cal-quote{color:var(--muted)}
+.cal-more{display:inline}
+.cal-more summary{display:inline;cursor:pointer;color:var(--link)}
+.cal-notes{border-top:1px solid var(--line);padding-top:16px;margin-top:24px}
+.cal-notes summary{cursor:pointer;font-weight:600}
+.cal-fix{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-top:32px}
+.cal-fix p{margin:10px 0 0;color:var(--muted);font-size:15px}
+@media (max-width:900px){
+  .cal-card{margin:8px 0 0}
+  .cal-card img{max-height:320px;width:auto;margin:0 auto}
+}
+/* On a phone the calibre's title already names its maker. */
+@media (max-width:600px){.cal{padding-top:24px}.cal-table .c-maker{display:none}.cal-table td:first-child{white-space:normal;min-width:8em}.cal input[type=search]{font-size:16px}}

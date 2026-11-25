@@ -1,0 +1,20 @@
+{{- /* The filter box over a calibre table. Hidden without JS, so the page
+     is a plain table (Ctrl+F still works). */ -}}
+<label class="cal-filter" hidden><span class="visually-hidden">{{ . }}</span>
+  <input type="search" placeholder="{{ . }}" autocomplete="off" spellcheck="false"></label>
+<script>
+(function(box){document.addEventListener("DOMContentLoaded",function(){
+  var input=box.querySelector("input");
+  var table=document.querySelector("table[data-filterable]"),none=document.querySelector(".cal-none");
+  if(!table)return;
+  var rows=[].slice.call(table.tBodies[0].rows),text=rows.map(function(r){return r.textContent.toLowerCase()});
+  box.hidden=false;
+  var t;
+  input.addEventListener("input",function(){clearTimeout(t);t=setTimeout(run,120)});
+  function run(){
+    var q=input.value.trim().toLowerCase(),shown=0;
+    for(var i=0;i<rows.length;i++){var on=!q||text[i].indexOf(q)>=0;rows[i].hidden=!on;if(on)shown++}
+    none.hidden=shown>0;
+  }
+})})(document.currentScript.previousElementSibling);
+</script>

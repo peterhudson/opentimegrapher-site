@@ -1,0 +1,5 @@
+{{- define "title" }}{{ with .Params.calibre }}{{ .title }} {{ site.Data.calibre_words.title_tail }} | {{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}{{ end -}}
+{{- define "description" }}{{ with .Params.calibre }}{{ .title }}: {{ .figures }}{{ with .specs }} · {{ .text }}{{ end }}.{{ else }}{{ $e := partialCached "calibres/export.html" . }}{{ printf site.Data.calibre_words.count_line (lang.FormatNumber 0 (len $e.calibres)) (lang.FormatNumber 0 (len $e.makers)) }}.{{ end }}{{ end -}}
+{{ define "main" }}
+{{- if .Params.makers }}{{ partial "calibres/makers.html" . }}{{ else }}{{ partial "calibres/page.html" . }}{{ end -}}
+{{ end }}

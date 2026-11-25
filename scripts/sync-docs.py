@@ -137,6 +137,9 @@ def main():
     shutil.rmtree(tmp, ignore_errors=True)
     notes = f", release notes for {version}" if version else ", no release notes"
     print(f"Synced {count['guide']} guide pages and {count['math']} math chapters{notes} from {ref}")
+    # The calibre pages' data (scripts/sync-calibres.py), here so the
+    # Cloudflare build command stays the same.
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "sync-calibres.py")], check=True)
 
 
 if __name__ == "__main__":

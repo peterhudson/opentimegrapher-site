@@ -1,0 +1,88 @@
+{{- /* One calibre's page, layout B (#2285): the figures, wheels, related
+     movements and sources in the main column; the picture, specs,
+     functions and documents in a side card that follows the figures on a
+     narrow screen. Every word and figure is the export's. */ -}}
+{{- $e := partialCached "calibres/export.html" . -}}
+{{- $h := $e.headings -}}{{- $w := site.Data.calibre_words -}}
+{{- $c := .Params.calibre -}}
+{{- if ne .RelPermalink .Params.want }}{{ errorf "calibres: %s was built at %s" .Params.want .RelPermalink }}{{ end -}}
+{{- $root := (site.GetPage "/calibres").RelPermalink -}}
+{{- $card := or $c.pictures $c.specs $c.functions $c.documents -}}
+<div class="wrap cal cal-page{{ if $card }} has-card{{ end }}">
+  <header class="cal-head">
+    <p class="crumbs"><a href="{{ $root }}">{{ $h.index }}</a> / <a href="{{ $root }}{{ $c.maker_slug }}/">{{ $c.maker }}</a></p>
+    <h1>{{ $c.title }}</h1>
+    {{- with $c.also_known_as }}<p class="lede">{{ . }}</p>{{ end }}
+    <p class="cal-figures">{{ range $i, $part := split $c.figures " · " }}{{ if $i }}&nbsp;· {{ end }}<span>{{ $part }}</span>{{ end }}</p>
+    {{- with $c.escapement }}<p class="cal-escapement" title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
+    {{- with $c.made }}<p class="cal-made" title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
+  </header>
+
+  {{- if $card }}
+  <aside class="cal-card">
+    {{- range $c.pictures }}
+    <figure><a href="{{ .url }}"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"></a><figcaption>{{ $h.picture_caption }}</figcaption></figure>
+    {{- end }}
+    {{- if or $c.specs $c.functions }}
+    <ul class="cal-specs">
+      {{- with $c.specs }}{{ range .parts }}<li title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</li>{{ end }}{{ end }}
+      {{- with $c.functions }}<li title="{{ .hover }}">{{ .text }}{{ partial "calibres/sup.html" .source }}</li>{{ end }}
+    </ul>
+    {{- end }}
+    {{- with $c.documents }}
+    <h2 class="cal-card-head">{{ $h.documents }}</h2>
+    <ul class="cal-docs">
+      {{- range . }}<li><a href="{{ .url }}">{{ .kind }}</a><span>{{ .file }}</span></li>{{ end }}
+    </ul>
+    {{- end }}
+  </aside>
+  {{- end }}
+
+  <div class="cal-body">
+    {{- with $c.summary }}
+    <section><h2>{{ $h.summary }}</h2>
+      {{- range . }}<p>{{ .text }}{{ partial "calibres/sup.html" .source }}</p>{{ end }}
+      <p class="muted cal-note">{{ $h.summary_hover }}</p>
+    </section>
+    {{- end }}
+    {{- with $c.issues }}
+    <section><h2>{{ $h.issues }}</h2>
+      <ul>{{ range . }}<li>{{ .text }}{{ partial "calibres/sup.html" .source }}</li>{{ end }}</ul>
+    </section>
+    {{- end }}
+    {{- with $c.wheels }}
+    <section><h2>{{ $h.wheels }}</h2>
+      <table class="cal-wheels"><tbody>
+        {{- range . }}<tr><th scope="row">{{ .name }}</th><td class="num">{{ .period }}</td></tr>{{ end }}
+      </tbody></table>
+    </section>
+    {{- end }}
+    {{- with $c.related }}
+    <section><h2>{{ $h.related }}</h2>
+      {{- range . }}
+      <p>{{ .label }} {{ range $i, $l := .calibres }}{{ if $i }}, {{ end }}<a href="{{ $l.path }}">{{ $l.name }}</a>{{ end }}{{ partial "calibres/sup.html" .source }}
+        {{- with .more }} <details class="cal-more"><summary>{{ .text }}</summary>{{ range $i, $l := .calibres }}{{ if $i }}, {{ end }}<a href="{{ $l.path }}">{{ $l.name }}</a>{{ end }}</details>{{ end }}</p>
+      {{- end }}
+    </section>
+    {{- end }}
+    <section><h2>{{ $h.sources }}</h2>
+      {{- with $c.basis }}<p class="muted">{{ . }}</p>{{ end }}
+      <ol class="cal-sources">
+        {{- range $c.sources }}
+        <li id="source-{{ .number }}" value="{{ .number }}">{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}
+          {{- with .quotes }} <span class="cal-quote">{{ delimit . " · " }}</span>{{ end }}</li>
+        {{- end }}
+      </ol>
+    </section>
+    {{- with $c.notes }}
+    {{- /* The notes cite the app repo's issues as "#1822": each links to its issue, so a reader can see what it says. */}}
+    <details class="cal-notes"><summary>{{ $h.notes }}</summary><p>{{ replaceRE `(^|[^&\w])#(\d{2,5})\b` "${1}<a href=\"https://github.com/peterhudson/timegrapher/issues/${2}\">#${2}</a>" (. | htmlEscape) | safeHTML }}</p></details>
+    {{- end }}
+    <div class="cal-fix">
+      {{- $fix := printf "https://github.com/peterhudson/timegrapher/issues/new?template=calibre.yml&labels=calibre&title=%s&calibre=%s" (printf $w.correction_title $c.title | urlquery) (printf "%s (%s)" $c.title $.Permalink | urlquery) }}
+      <a class="button" href="{{ $fix }}">{{ $w.correction_button }}</a>
+      <p>{{ $w.correction_text }}</p>
+    </div>
+    {{ partial "calibres/licence.html" . }}
+  </div>
+</div>

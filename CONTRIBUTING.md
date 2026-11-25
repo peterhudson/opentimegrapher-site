@@ -19,6 +19,10 @@ They come from `docs/user-guide` in the app repo, at its newest release tag. Fix
 
 The same goes for the What's new page and the Download links: `scripts/sync-docs.py` takes them from `packaging/release-notes/<version>.md` and the version of the newest tag. The site rebuilds when something merges here, so after a release, merge any small site change (or retry the latest deploy in Cloudflare Pages) to pick up the new version.
 
+## The calibre pages are not edited here
+
+Every page under `/calibres/` is made at build time from the app's calibre export (`timegrapher calibres export --json`), by `content/calibres/_content.gotmpl`. `scripts/sync-calibres.py` (run by `sync-docs.py`) puts the export where Hugo reads it. Fix a calibre in the app repo's table; fix a heading or a figure's wording in the app repo's `calibre_page.rs`. The few words the export doesn't carry yet are in `data/calibre_words.yaml` until it does.
+
 ## Writing a Blog article
 
 Add `content/blog/<yyyy-mm-dd>-<slug>.md`:

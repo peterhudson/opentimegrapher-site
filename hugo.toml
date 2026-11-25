@@ -28,6 +28,10 @@ ignoreFiles = []
     pageRef = "/math"
     weight = 20
   [[menus.main]]
+    name = "Calibres"
+    pageRef = "/calibres"
+    weight = 25
+  [[menus.main]]
     name = "Blog"
     pageRef = "/blog"
     weight = 30
@@ -49,6 +53,15 @@ ignoreFiles = []
 [markup.highlight]
   noClasses = false
 
+# Cloudflare Pages reads redirects from /_redirects (layouts/index.redirects).
+[mediaTypes."text/redirects"]
+  delimiter = ""
+[outputFormats.redirects]
+  mediaType = "text/redirects"
+  baseName = "_redirects"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "redirects"]
   section = ["HTML", "RSS"]

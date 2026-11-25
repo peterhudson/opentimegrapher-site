@@ -1,0 +1,25 @@
+{{- /* A table of calibres with the full list's columns; `maker` false
+     leaves out the Maker column (a maker's own page). */ -}}
+{{- $h := .h -}}{{- $w := site.Data.calibre_words -}}
+<div class="cal-table-wrap">
+<table class="cal-table" data-filterable>
+  <thead><tr>
+    <th scope="col">{{ $w.calibre }}</th>
+    {{- if .maker }}<th scope="col" class="c-maker">{{ $w.maker }}</th>{{ end }}
+    <th scope="col">{{ $h.beat_rate }}</th>
+    <th scope="col">{{ $h.lift_angle }}</th>
+    <th scope="col">{{ $h.escape_teeth }}</th>
+    <th scope="col">{{ $w.also_known_as }}</th>
+  </tr></thead>
+  <tbody>
+  {{- $showMaker := .maker }}
+  {{- range .rows }}
+  <tr><td><a href="{{ .path }}">{{ .title }}</a></td>
+    {{- if $showMaker }}<td class="c-maker"><a href="{{ printf "%s%s/" $.root .maker_slug }}">{{ .maker }}</a></td>{{ end -}}
+    <td class="num">{{ .beat_rate }}</td><td class="num">{{ .lift_angle }}</td><td class="num">{{ .escape_teeth }}</td>
+    <td>{{ with .also_known_as }}{{ strings.TrimPrefix $w.also_known_as_lead . }}{{ end }}</td></tr>
+  {{- end }}
+  </tbody>
+</table>
+</div>
+<p class="cal-none muted" hidden>{{ $w.no_match }}</p>

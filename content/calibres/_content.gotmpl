@@ -1,0 +1,14 @@
+{{- /* One page per maker and per calibre, from the calibre export
+     (scripts/sync-calibres.py). Each page's address is the export's
+     `path`; the templates check that the built page is there. */ -}}
+{{- $e := resources.Get "calibres/export.json" | transform.Unmarshal -}}
+{{- range $e.makers -}}
+  {{- $.AddPage (dict "kind" "section" "path" .slug "title" .maker
+      "params" (dict "maker" . "want" .path)) -}}
+{{- end -}}
+{{- $.AddPage (dict "kind" "page" "path" "makers" "title" site.Data.calibre_words.makers_title
+    "params" (dict "makers" true)) -}}
+{{- range $e.calibres -}}
+  {{- $.AddPage (dict "kind" "page" "path" (printf "%s/%s" .maker_slug .slug) "title" .title
+      "params" (dict "calibre" . "want" .path)) -}}
+{{- end -}}
