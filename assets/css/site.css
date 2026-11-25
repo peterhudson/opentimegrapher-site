@@ -205,9 +205,12 @@ a.zoom{cursor:zoom-in}
 .cal-docs li.has-thumb > span{padding-left:76px}
 sup.src{font-size:.7em;line-height:0;margin-left:1px}
 sup.src a{text-decoration:none}
-.cal-wheels{border-collapse:collapse;font-size:15px}
-.cal-wheels th{font-weight:400;text-align:left;padding:6px 32px 6px 0;border-bottom:1px solid var(--line)}
-.cal-wheels td{padding:6px 0;border-bottom:1px solid var(--line);text-align:right}
+.cal-wheels{border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums;margin:0 0 10px}
+.cal-wheels th,.cal-wheels td{padding:6px 0 6px 28px;border-bottom:1px solid var(--line);text-align:right;vertical-align:bottom}
+.cal-wheels th[scope=row]{font-weight:400;text-align:left;padding:6px 8px 6px 0}
+.cal-wheels thead th{font-size:13px;font-weight:600;color:var(--muted)}
+.cal-wheels tbody td{white-space:nowrap}
+.cal-blank{color:var(--muted)}
 .cal-sources{padding-left:1.8em;margin:0;font-size:15px}
 .cal-sources li{margin:.3em 0;overflow-wrap:anywhere}
 .cal-sources li:target{background:var(--code-bg);border-radius:4px}
@@ -223,4 +226,4 @@ sup.src a{text-decoration:none}
   .cal-card img{max-height:320px;width:auto;margin:0 auto}
 }
 /* On a phone the calibre's title already names its maker. */
-@media (max-width:600px){.cal{padding-top:24px}.cal-table .c-maker{display:none}.cal-table td:first-child{white-space:normal;min-width:8em}.cal input[type=search]{font-size:16px}}
+@media (max-width:600px){.cal{padding-top:24px}.cal-wheels{font-size:14px}.cal-wheels th,.cal-wheels td{padding-left:10px}.cal-table .c-maker{display:none}.cal-table td:first-child{white-space:normal;min-width:8em}.cal input[type=search]{font-size:16px}}

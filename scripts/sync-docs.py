@@ -139,7 +139,12 @@ def main():
     print(f"Synced {count['guide']} guide pages and {count['math']} math chapters{notes} from {ref}")
     # The calibre pages' data (scripts/sync-calibres.py), here so the
     # Cloudflare build command stays the same.
-    subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "sync-calibres.py")], check=True)
+    # Until peterhudson/timegrapher#2306 merges, the pages build from its
+    # export in fixtures/ (see fixtures/README.md); then this goes back to
+    # the plain call, which downloads the calibre-data release.
+    fixture = os.path.join(ROOT, "fixtures", "calibres-export.json.gz")
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "sync-calibres.py")]
+                   + ([fixture] if os.path.exists(fixture) else []), check=True)
 
 
 if __name__ == "__main__":
