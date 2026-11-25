@@ -1,0 +1,6 @@
+# The blog was called the Journal until 22 Nov 2026. Old links and the old feed keep working.
+/journal /blog/ 301
+/journal/* /blog/:splat 301
+{{- /* A calibre renamed in the app's table keeps its old address. */}}
+{{ with resources.Get "calibres/export.json" }}{{ range (transform.Unmarshal .).calibres }}{{ $to := .path }}{{ range .former_paths }}
+{{ . }} {{ $to }} 301{{ end }}{{ end }}{{ end }}

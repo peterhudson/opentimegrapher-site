@@ -1,0 +1,26 @@
+{{- define "title" }}{{ if .Params.maker }}{{ .Title }} {{ (partialCached "calibres/export.html" .).headings.index | lower }}{{ else }}{{ .Title }}{{ end }} · {{ site.Title }}{{ end -}}
+{{- define "description" }}{{ $e := partialCached "calibres/export.html" . }}{{ $w := site.Data.calibre_words }}{{ with .Params.maker }}{{ $.Title }}: {{ printf $w.maker_count (lang.FormatNumber 0 .calibres) }}.{{ else }}{{ printf $w.count_line (lang.FormatNumber 0 (len $e.calibres)) (lang.FormatNumber 0 (len $e.makers)) }}.{{ end }}{{ end -}}
+{{ define "main" }}
+{{- $e := partialCached "calibres/export.html" . -}}
+{{- $h := $e.headings -}}{{- $w := site.Data.calibre_words -}}
+{{- $root := (site.GetPage "/calibres").RelPermalink -}}
+<div class="wrap cal">
+{{- with .Params.maker }}
+  {{- if ne $.RelPermalink $.Params.want }}{{ errorf "calibres: %s was built at %s" $.Params.want $.RelPermalink }}{{ end }}
+  <p class="crumbs"><a href="{{ $root }}">{{ $h.index }}</a></p>
+  <h1>{{ .maker }}</h1>
+  <p class="lede">{{ printf $w.maker_count (lang.FormatNumber 0 .calibres) }}</p>
+  {{ partial "calibres/filter.html" (printf $w.filter_maker .maker) }}
+  {{ partial "calibres/table.html" (dict "h" $h "root" $root "maker" false "rows" (where $e.calibres "maker_slug" .slug)) }}
+{{- else }}
+  <h1>{{ $h.index }}</h1>
+  <p class="lede">{{ printf $w.count_line (lang.FormatNumber 0 (len $e.calibres)) (lang.FormatNumber 0 (len $e.makers)) }}</p>
+  {{ partial "calibres/tabs.html" (dict "h" $h "root" $root "at" "list") }}
+  {{ partial "calibres/filter.html" $w.filter }}
+  {{- $rows := slice }}
+  {{- range $e.makers }}{{ $rows = $rows | append (where $e.calibres "maker_slug" .slug) }}{{ end }}
+  {{ partial "calibres/table.html" (dict "h" $h "root" $root "maker" true "rows" $rows) }}
+{{- end }}
+  {{ partial "calibres/licence.html" . }}
+</div>
+{{ end }}

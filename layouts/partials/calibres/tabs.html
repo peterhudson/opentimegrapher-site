@@ -1,0 +1,6 @@
+{{- /* Full list / By maker, under the Calibres heading. */ -}}
+{{- $w := site.Data.calibre_words -}}
+<nav class="cal-tabs" aria-label="{{ .h.index }}">
+  <a href="{{ .root }}"{{ if eq .at "list" }} aria-current="page"{{ end }}>{{ $w.full_list }}</a>
+  <a href="{{ .root }}makers/"{{ if eq .at "makers" }} aria-current="page"{{ end }}>{{ $w.by_maker }}</a>
+</nav>

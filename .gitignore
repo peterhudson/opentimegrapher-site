@@ -8,3 +8,5 @@ static/docs-images/
 data/docs_source.json
 data/release.json
 content/whats-new/
+# Written by scripts/sync-calibres.py from the calibre export:
+assets/calibres/

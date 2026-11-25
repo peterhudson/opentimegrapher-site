@@ -1,0 +1,51 @@
+{{- /* /calibres/makers/: a search over every calibre and its other names,
+     the common makers as buttons, then every maker A to Z with how many
+     calibres it has. Without JS the search box is hidden and the lists
+     still work. */ -}}
+{{- $e := partialCached "calibres/export.html" . -}}
+{{- $h := $e.headings -}}{{- $w := site.Data.calibre_words -}}
+{{- $root := (site.GetPage "/calibres").RelPermalink -}}
+{{- $idx := slice -}}
+{{- range $e.calibres }}{{ $idx = $idx | append (dict "t" .title "p" .path "a" (.also_known_as | default "") "f" .figures) }}{{ end -}}
+{{- $json := resources.FromString "calibres/search.json" ($idx | jsonify) | fingerprint -}}
+<div class="wrap cal">
+  <h1>{{ $h.index }}</h1>
+  <p class="lede">{{ printf $w.count_line (lang.FormatNumber 0 (len $e.calibres)) (lang.FormatNumber 0 (len $e.makers)) }}</p>
+  {{ partial "calibres/tabs.html" (dict "h" $h "root" $root "at" "makers") }}
+  <div class="cal-search" hidden data-index="{{ $json.RelPermalink }}">
+    <label><span class="visually-hidden">{{ $w.find }}</span>
+      <input type="search" placeholder="{{ $w.find }}" autocomplete="off" spellcheck="false"></label>
+    <ul class="cal-results"></ul>
+    <p class="cal-none muted" hidden>{{ $w.no_match }}</p>
+  </div>
+  <ul class="cal-common">
+    {{- range where $e.makers "common" true }}<li><a href="{{ .path }}">{{ .maker }}</a></li>{{ end }}
+  </ul>
+  <h2>{{ $w.all_makers }}</h2>
+  <ul class="cal-makers">
+    {{- range $e.makers }}<li><a href="{{ .path }}">{{ .maker }}</a> <span>{{ lang.FormatNumber 0 .calibres }}</span></li>{{ end }}
+  </ul>
+  {{ partial "calibres/licence.html" . }}
+</div>
+<script>
+(function(){
+  var box=document.querySelector(".cal-search"),input=box.querySelector("input"),out=box.querySelector(".cal-results"),none=box.querySelector(".cal-none");
+  var data=null,t;
+  box.hidden=false;
+  function load(){if(data)return Promise.resolve(data);return fetch(box.dataset.index).then(function(r){return r.json()}).then(function(d){data=d.map(function(r){return{r:r,k:(r.t+" "+r.a).toLowerCase()}});return data})}
+  input.addEventListener("focus",load,{once:true});
+  input.addEventListener("input",function(){clearTimeout(t);t=setTimeout(run,120)});
+  function run(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){out.textContent="";none.hidden=true;return}
+    load().then(function(d){
+      if(input.value.trim().toLowerCase()!==q)return;
+      out.textContent="";var n=0;
+      for(var i=0;i<d.length;i++){if(d[i].k.indexOf(q)<0)continue;n++;
+        var r=d[i].r,li=document.createElement("li"),a=document.createElement("a"),s=document.createElement("span");
+        a.href=r.p;a.textContent=r.t;s.textContent=r.f;li.appendChild(a);li.appendChild(s);out.appendChild(li)}
+      none.hidden=n>0;
+    });
+  }
+})();
+</script>

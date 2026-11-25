@@ -1,0 +1,29 @@
+# Words on the calibre pages that the calibre export does not carry yet.
+# Every other heading, figure, unit and link on those pages comes from the
+# export (scripts/sync-calibres.py). These move into the export's headings
+# in the app repo, and this file goes, once core has them.
+calibre: Calibre
+maker: Maker
+also_known_as: Also known as
+# The export's "Also known as …" sentence, shown in the column under the
+# heading above without these first words.
+also_known_as_lead: "Also known as "
+# "<title>" of a calibre page after the calibre's title (#2285).
+title_tail: lift angle, beat rate and specs
+# Under the full list's heading: "5,174 calibres from 140 makers".
+count_line: "%s calibres from %s makers"
+maker_count: "%s calibres"
+filter: Filter the table, for example 2824 or 7S26
+filter_maker: "Find a %s calibre"
+no_match: No calibre matches.
+full_list: Full list
+by_maker: By maker
+makers_title: Calibres by maker
+find: Find a calibre, for example 2824 or 7S26
+all_makers: All makers
+# The app repo's Calibre data issue form, filled in with the calibre and page.
+correction_title: "Calibre data: %s"
+correction_button: Report a correction
+correction_text: Something wrong or missing on this page? Tell us with a source, and the table in the app is fixed too.
+licence: "The facts on this page are free to use (CC0). Makers' photos and documents stay theirs; they are mirrored for reference."
+takedown: Ask for a file to be removed
