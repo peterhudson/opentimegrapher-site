@@ -55,6 +55,12 @@ def check(export, name):
     calibres, makers = export.get("calibres"), export.get("makers")
     if not calibres or not makers:
         sys.exit(f"Calibres: {name} holds no calibres or no makers")
+    # The Wheels table's words (#2301): an older export lacks them and would
+    # build green with empty column heads.
+    lacking = [k for k in ("teeth", "leaves", "period", "blank", "blank_hover", "wheels_key", "wheels_ask")
+               if k not in export.get("headings", {})]
+    if lacking:
+        sys.exit(f"Calibres: {name}: headings lack {', '.join(lacking)}; the export predates peterhudson/timegrapher#2306")
     paths = [p.get("path") for p in calibres] + [m.get("path") for m in makers]
     if None in paths or len(paths) != len(set(paths)):
         sys.exit(f"Calibres: {name}: two pages share an address, or one has none")
