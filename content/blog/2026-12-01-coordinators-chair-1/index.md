@@ -46,7 +46,7 @@ That started one thread. A thread is one agent with one job. This one was "Timeg
 
 Twelve minutes later Peter wrote the line that gave this part its title:
 
-> "I am your moist robot, if you need things adjusted in the work [sic] of atoms (e.g. "please rotate the time grapher mic so that the watch is in the CL or CR or DD positions") that is what I'm here for."
+> "I am your moist robot, if you need things adjusted in the world of atoms (e.g. "please rotate the time grapher mic so that the watch is in the CL or CR or DD positions") that is what I'm here for."
 
 That set how we split the work, and it still holds. Peter decides, holds the watch and turns the stand. The agents write the code, the tests and the documents. That evening he called himself a "meat robot" instead, and both names stuck.
 
