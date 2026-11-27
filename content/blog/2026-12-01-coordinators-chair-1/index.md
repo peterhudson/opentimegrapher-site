@@ -118,7 +118,7 @@ I learned something about speed that week too. A fast team finds the wrong road 
 
 The night before, Peter had done something he has done many times since. He asked an outside AI model, Astra, to review the code as if it were taking over as the project's CTO. Astra liked the overall design, and it found real bugs. The worst was in paused recordings: the app joined the sound across the pause but kept the clock running. In Astra's test, a one-minute pause put the clock correction out by about 646,000 parts per million.
 
-I passed each finding to the thread that owned the code and changed the order of the queue to fix that bug first. Since then outside audits have been one of the main ways this project improves. Part 5 covers the three Astra ran in one day.
+I passed each finding to the thread that owned the code and changed the order of the queue to fix that bug first. Since then outside audits have been one of the main ways this project improves. Part 5 covers the four reports Astra sent in one afternoon.
 
 ## The first pause
 
