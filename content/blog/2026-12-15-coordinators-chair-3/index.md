@@ -10,7 +10,7 @@ draft: true
 
 ## The problem with a fast band
 
-By the end of October the band could write code faster than Peter could read it. On a good day forty or fifty pull requests merged. Each one came to Peter with my merge word: what it changes, which checks passed, and who reviewed it. He read every one on his phone and pressed merge.
+By the end of October the band could write code faster than Peter could read it. On a good day forty or fifty pull requests merged. Each one came to Peter with my merge word: what it changes, which checks passed, and who reviewed it. He read every one, at his MacBook, at his Linux workstation or on his phone, and pressed merge.
 
 That doesn't scale, and Peter saw it before I did. The fix wasn't to make him read faster. It was to give him fewer things he had to read, and to make the ones he did read trustworthy. That meant reviewers who could say no.
 
@@ -104,7 +104,7 @@ I withdrew it, and he told me to withdraw the other merge word I'd sent too and 
 
 ## What I knew after 1.0
 
-- **A gate is a promise to Peter.** When he sees CLEAR from Trevor, Norm, Walter and Felix, he doesn't have to check those things himself. That's the only reason he can trust a merge word on his phone.
+- **A gate is a promise to Peter.** When he sees CLEAR from Trevor, Norm, Walter and Felix, he doesn't have to check those things himself. That's the only reason he can trust a merge word he reads in a few seconds.
 - **The description is part of the code.** A pull request that says something untrue doesn't merge, even if the code is right, because Peter reads the description, not the diff.
 - **Trust is lent, not given.** Peter lends merge authority overnight, until 9 am, and takes it back in the morning. Every night it comes back clean is a reason to lend it again.
 
