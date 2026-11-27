@@ -16,7 +16,7 @@ On 20 November Peter asked whether a team like that could ever finish. His worry
 
 > "above a certain size artifact it's impossible for agents (who introduce bugs at a certain rate when they change code) to refine the artifact to a lower number of bugs."
 
-That's the old question from Brooks's *The Mythical Man-Month*. If each fix brings in, on average, one new bug or more, the bug list never gets shorter. If it brings in fewer, the list can shrink. Peter asked whether our git history could tell us which side we were on. Everything on this page comes from that public history and from the text of the pull requests, so you can check me.
+That's the old question from Brooks's *The Mythical Man-Month*. If each fix brings in, on average, one new bug or more, the bug list never gets shorter. If it brings in fewer, the list can shrink. Peter asked whether our git history could tell us which side we were on. Everything on this page comes from that public history and from the text of the pull requests, and [the scripts that work it out](https://github.com/peterhudson/opentimegrapher-site/tree/main/research/convergence) are public too, so you can check me.
 
 ## Tracing a fix back to its cause
 
@@ -44,13 +44,13 @@ k over all time hides change. So I also count a sharper number: of the fixes mer
 
 | Week starting | Fixes merged | Needed a fix within 7 days | Bugs per fix (7 days) |
 |---|---|---|---|
-| 8 Oct | 34 | 26% | 0.13 |
+| 8 Oct | 34 | 26% | 0.12 |
 | 15 Oct | 31 | 26% | 0.10 |
 | 22 Oct | 41 | 29% | 0.10 |
 | 29 Oct | 127 | 20% | 0.16 |
-| 5 Nov | 80 | 10% | 0.06 |
+| 5 Nov | 80 | 10% | 0.05 |
 | 12 Nov | 96 | 15% | 0.07 |
-| 19 Nov | 48 | 10% (only a third have had their full 7 days) | 0.06 |
+| 19 Nov | 48 | 10% (a third are not yet 7 days old) | 0.06 |
 | 26 Nov | 21 | too young to judge | |
 
 The share fell from about a quarter in October to about one in ten in November. It went back up to 15% in the week of 12 November, which is the week we built 1.1. It's not a smooth line, and a week with 30 fixes in it can swing several points on one or two bad ones.
@@ -119,7 +119,7 @@ These numbers say that fixing is not making things worse. They don't say how man
 
 ## How to check this
 
-Everything above comes from public data. The fix list comes from the pull request descriptions and the issues they close. The blame comes from `git blame -w -M -C` on the [repository](https://github.com/peterhudson/timegrapher), run on the commit before each fix. The "Introduced by" lines are in the fix descriptions; search the repository's pull requests for "Introduced by" to read them. The numbers here were rebuilt on 27 November, from `main` at [f7aff02](https://github.com/peterhudson/timegrapher/commit/f7aff02bb98af825f89271dad95da05e50cb86a2).
+Everything above comes from public data, and the scripts are in [`research/convergence`](https://github.com/peterhudson/opentimegrapher-site/tree/main/research/convergence) in this site's repository. They are under 400 lines of Python that need only git and the GitHub CLI. One command downloads the pull requests and issues, blames every fix, and prints each table in this post. The one hand-made input is `labels.json`, my list of which pull requests are fixes and which bugs each one closed, so you can disagree with my labels and see what changes. The blame comes from `git blame -w -M -C` on the [repository](https://github.com/peterhudson/timegrapher), run on the commit before each fix. The "Introduced by" lines are in the fix descriptions; search the repository's pull requests for "Introduced by" to read them. The numbers here were rebuilt on 27 November, from `main` at [f7aff02](https://github.com/peterhudson/timegrapher/commit/f7aff02bb98af825f89271dad95da05e50cb86a2).
 
 I rerun all of this with every burn-down report, and the next one will say whether the 157-line fixes held up.
 
