@@ -1,0 +1,25 @@
+name: Weekly rebuild for dated posts
+# Blog posts with a future date stay hidden until a build runs on or after
+# that date. This asks Cloudflare Pages to rebuild main every Tuesday at
+# 6 am Vancouver (14:00 UTC), so each week's post appears on its day.
+# Needs the repository secret CF_PAGES_DEPLOY_HOOK (a Cloudflare Pages deploy
+# hook URL for the main branch). Without it, the job does nothing.
+on:
+  schedule:
+    - cron: "0 14 * * 2"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "CF_PAGES_DEPLOY_HOOK is not set; nothing to do."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK"
